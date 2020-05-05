@@ -1,0 +1,21 @@
+Concept: 'Paper Route'
+
+Top Down View
+One Screen
+6 Houses With Mailboxes
+7 Newspapers for you to throw
+
+Controls
+Move with Analogue Stick 1
+Aim with Analogue Stick 2 
+	A small indicator appears showing where you are aiming
+Throw with a button
+Papers keep flying indefinetely and leave the screen if they don't hit a mailbox
+
+Flow:
+If you run out of papers without delivering to all the papers the game resets with a large 'TRY AGAIN' message
+
+If you deliver all 6 the game ends
+'THE END'
+
+It then returns to the title screen asking you to 'Press Stuff' to Begin
