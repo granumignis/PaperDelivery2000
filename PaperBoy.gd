@@ -1,10 +1,11 @@
 extends Node2D
 
-const Newspaper = preload("res://Objects/Newspaper.tscn")
+const Newspaper = preload("res://Objects/NewsPaper.tscn")
 
 var moving = false
 export(int) var SPEED = 157
 export(int) var THROW_SPEED = 157
+export(int) var AMMO = 6
 
 onready var sprite = $Sprite
 onready var aim_visual = $"Sprite/aim-visual"
@@ -25,10 +26,15 @@ func _process(delta):
 		throw_newspaper()
 	
 func throw_newspaper():
-	var newspaper = Utils.instance_scene_on_main(Newspaper, aim_visual.global_position)
-	newspaper.velocity = Vector2.RIGHT.rotated(aim_visual.rotation) * THROW_SPEED
-	newspaper.velocity.x *= sprite.scale.x
-	newspaper.rotation = newspaper.velocity.angle()
+	if AMMO >= 1:
+		var newspaper = Utils.instance_scene_on_main(Newspaper, aim_visual.global_position)
+		newspaper.velocity = Vector2.RIGHT.rotated(aim_visual.rotation) * THROW_SPEED
+		newspaper.velocity.x *= sprite.scale.x
+		newspaper.rotation = newspaper.velocity.angle()
+		AMMO = AMMO - 1
+		print("CURRENT AMMO: "+ str(AMMO))
+	else:
+		print("OUT OF NEWSPAPERS")
 
 func move(xspeed, yspeed, delta):
 	position.x += xspeed * delta
