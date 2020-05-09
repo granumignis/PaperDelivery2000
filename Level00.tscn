@@ -44,9 +44,12 @@ position = Vector2( 38.714, 44.5478 )
 position = Vector2( 36.9462, 73.3624 )
 
 [node name="ExtraPapers" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 96.6969, 83.4387 )
 
 [node name="ExtraPaperSpawner" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 83.4853, 46.2981 )
+[connection signal="out_of_newspapers" from="PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
 
 [editable path="ExtraPaperSpawner"]

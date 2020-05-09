@@ -1,6 +1,7 @@
 extends Node2D
 
 const Newspaper = preload("res://Objects/NewsPaper.tscn")
+signal out_of_newspapers
 
 var moving = false
 export(int) var SPEED = 157
@@ -10,6 +11,9 @@ export(int) var AMMO = 6
 onready var sprite = $Sprite
 onready var aim_visual = $"Sprite/aim-visual"
 
+func _ready():
+	set_process(false)
+	
 func _process(delta):
 	moving = false
 	if Input.is_action_pressed("ui_right"):
@@ -35,6 +39,7 @@ func throw_newspaper():
 		print("CURRENT AMMO: "+ str(AMMO))
 	else:
 		print("OUT OF NEWSPAPERS")
+		emit_signal("out_of_newspapers")
 
 func move(xspeed, yspeed, delta):
 	position.x += xspeed * delta
