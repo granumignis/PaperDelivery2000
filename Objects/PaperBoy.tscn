@@ -1,14 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Art/paperboy.png" type="Texture" id=1]
 [ext_resource path="res://PaperBoy.gd" type="Script" id=2]
 [ext_resource path="res://Objects/aim-visual.tscn" type="PackedScene" id=3]
 
-[node name="PaperBoy" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="PaperBoy" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 58.2757, 48.4074 )
+position = Vector2( 0, -4.02256 )
 texture = ExtResource( 1 )
+offset = Vector2( 0.5, 0 )
 
 [node name="aim-visual" parent="Sprite" instance=ExtResource( 3 )]
+position = Vector2( 0.5, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}

@@ -1,0 +1,80 @@
+[gd_scene format=2]
+
+[node name="ExtraPaperSpawner" type="Node2D"]
+position = Vector2( 75, 44 )
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D" type="Position2D" parent="SpawnPoints"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D2" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -6, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D3" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -6, -4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D4" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 5, -4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D5" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 5, 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D6" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 0, 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D7" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -6, 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D8" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -3, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D9" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D10" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D11" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D12" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -3, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
