@@ -30,9 +30,11 @@ func set_delivered(value):
 		PaperBoy.set_canshoot(false)
 		JumboTron.setJumboTronMessage("WIN")
 		PaperBoy.set_showReticle(false)
-		yield(main.create_timer(9), "timeout")
+		yield(main.create_timer(9.0), "timeout")
+		JumboTron.setJumboTronMessage("IT'S OVER")
+		yield(main.create_timer(3.0), "timeout")
 		main.quit()
-		#PaperBoy.queue_free()
+
 
 
 func get_delivered():
