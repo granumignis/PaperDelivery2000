@@ -23,6 +23,7 @@ func _ready():
 func set_delivered(value):
 	delivered = value
 	JumboTron.setJumboTronMessage(str(delivered) + " Papers Delivered")
+	yield(get_tree().create_timer(3.0), "timeout")
 	if delivered >= 6:
 		JumboTron.setJumboTronMessage("WIN")
 		PaperBoy.queue_free()
@@ -38,7 +39,7 @@ func _on_MailBox_NewsPaper_Delivered():
 
 func _on_PaperBoy_out_of_newspapers():
 	PaperBoy.queue_free()
-	JumboTron.setJumboTronMessage("GAME OVER")
+	JumboTron.setJumboTronMessage("OUT OF PAPERS")
 	yield(get_tree().create_timer(5.0), "timeout")
 	JumboTron.setJumboTronMessage("TRY AGAIN")
 	yield(get_tree().create_timer(5.0), "timeout")
@@ -47,4 +48,10 @@ func _on_PaperBoy_out_of_newspapers():
 func restart_game():
 	delivered = 0
 	
+	
+
+
+func _on_PaperBoy_shot_newspaper(papers_left):
+	# JumboTron.setJumboTronMessage("PAPERS LEFT: " + str(papers_left))
+	pass
 	

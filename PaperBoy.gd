@@ -2,6 +2,7 @@ extends Node2D
 
 const Newspaper = preload("res://Objects/NewsPaper.tscn")
 signal out_of_newspapers
+signal shot_newspaper(papers_left)
 
 var moving = false
 export(int) var SPEED = 157
@@ -37,6 +38,7 @@ func throw_newspaper():
 		newspaper.rotation = newspaper.velocity.angle()
 		AMMO = AMMO - 1
 		print("CURRENT AMMO: "+ str(AMMO))
+		emit_signal("shot_newspaper", AMMO)
 	else:
 		print("OUT OF NEWSPAPERS")
 		emit_signal("out_of_newspapers")
