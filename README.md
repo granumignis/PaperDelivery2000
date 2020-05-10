@@ -4,7 +4,7 @@
 
 It's an browser-based game that involves Paper Delivery.
 
-Currently not compatible with Mobile Devices
+Currently not compatible with Mobile Devices. You'll want a device with a keyboard + mouse or dual-stick gamepad to play.
 
 Created in the Godot Engine utilizing it's 'GDScript' language. Heavily based on learnings from HeartBeast's 1-Bit Godot Course:  [https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast](https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast)
 
@@ -15,7 +15,8 @@ Ways:
  - Download the contents of the Export folder which contains exports for multiple platforms
 	 - Only the HTML5 Export has been tested
  - Clone this repository and open it in the Godot Engine IDE
- 
+ - Can't play it? :(
+ 	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4
 
 ## HOW TO PLAY: INPUT
 
