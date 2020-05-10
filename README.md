@@ -38,7 +38,7 @@ Dual Stick GamePad (Tested on Xbox 360 Controller)
 	That little thing coming out of you is an aim reticle
 	Those are mailboxes around you
 	the thing you are shooting is a newspaper
-	(You are actually throwing it)
+		(You are actually throwing it)
 
 
 ## HOW TO PLAY: TIPS
