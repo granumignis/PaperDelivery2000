@@ -6,13 +6,9 @@ It's a game that involves Paper Delivery.
 
 Currently not compatible with Mobile Devices. You'll want a device with a keyboard + mouse or dual-stick gamepad to play.
 
-Created in the Godot Engine utilizing it's 'GDScript' language. Heavily based on learnings from HeartBeast's 1-Bit Godot Course:  [https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast](https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast)
+Created in the Godot Engine utilizing it's 'GDScript' language (similar to Python). Heavily based on learnings from HeartBeast's 1-Bit Godot Course:  [https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast](https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast)
 
-## What is the Godot Engine? Was this 'programmed' or just 'point and clicked'?
-
-The creation of this involved the use of an graphical IDE combined with godot's GDScript language (syntax is similar to Python).
-
-Reference: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
+GDScript Reference: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
 
 
 ## Where do I get it?
