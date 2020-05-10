@@ -1,16 +1,21 @@
-# PaperDelivery2000
-It's an browser-based game that involves Paper Delivery
-Currently not compatible with Mobile Devices
+# PAPER DELIVERY 2000
 
-Created in the Godot Engine utilizing it's 'GDScript' language.
-Heavily based on learnings from HeartBeast's 1-Bit Godot Course: https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast
+## What is it?
 
+It's an browser-based game that involves Paper Delivery Currently not compatible with Mobile Devices
 
-Manual / Reference below:
+Created in the Godot Engine utilizing it's 'GDScript' language. Heavily based on learnings from HeartBeast's 1-Bit Godot Course:  [https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast](https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast)
 
-PAPER DELIVERY 2000
+## Where do I get it?
+Ways:
 
-HOW TO PLAY: INPUT
+ - Check out http://www.whereiputmystuff.com/paperdelivery2000/ for a live version of the game
+ - Download the contents of the Export folder which contains exports for multiple platforms
+	 - Only the HTML5 Export has been tested
+ - Clone this repository and open it in the Godot Engine IDE
+ 
+
+## HOW TO PLAY: INPUT
 
 Keyboard 
 
@@ -28,7 +33,7 @@ Dual Stick GamePad (Tested on Xbox 360 Controller)
 	Right Stick Changes Aim Direction
 	Shoot with 'A' (bottom face button or right trigger)
 
-HOW TO PLAY: VISUALS
+## HOW TO PLAY: VISUALS
 
 	That little thing coming out of you is an aim reticle
 	Those are mailboxes around you
@@ -36,6 +41,6 @@ HOW TO PLAY: VISUALS
 	(You are actually throwing it)
 
 
-HOW TO PLAY: TIPS
+## HOW TO PLAY: TIPS
 
 	Don't run out of papers! (You only get 6!)
