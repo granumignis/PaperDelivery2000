@@ -2,7 +2,9 @@
 
 ## What is it?
 
-It's an browser-based game that involves Paper Delivery Currently not compatible with Mobile Devices
+It's an browser-based game that involves Paper Delivery.
+
+Currently not compatible with Mobile Devices
 
 Created in the Godot Engine utilizing it's 'GDScript' language. Heavily based on learnings from HeartBeast's 1-Bit Godot Course:  [https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast](https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast)
 
