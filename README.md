@@ -10,22 +10,32 @@ Manual / Reference below:
 
 PAPER DELIVERY 2000
 
-HOW TO PLAY:
+HOW TO PLAY: INPUT
 
-INPUT:
-Keyboard (Arrow keys or WASD keys to move) + Mouse (Change Aim Direction, click to throw)
+Keyboard 
 
-Dual Stick GamePad (Tested on Xbox 360 Controller
+	Arrow keys or WASD keys to move
+
+Mouse
+
+	Move cursor  to change Aim Direction
+	Left click to throw
+	
+
+Dual Stick GamePad (Tested on Xbox 360 Controller)
+
 	Left Stick Moves
 	Right Stick Changes Aim Direction
 	Shoot with 'A' (bottom face button or right trigger)
 
-VISUALS:
-That little thing coming out of you is an aim reticle
-Those are mailboxes around you
-the thing you are shooting is a newspaper
+HOW TO PLAY: VISUALS
+
+	That little thing coming out of you is an aim reticle
+	Those are mailboxes around you
+	the thing you are shooting is a newspaper
 	(You are actually throwing it)
 
 
-TIPS:
-Don't run out of papers! (You only get 6!)
+HOW TO PLAY: TIPS
+
+	Don't run out of papers! (You only get 6!)
