@@ -21,6 +21,7 @@ __meta__ = {
 
 [node name="PaperBoy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 83.969, 47.553 )
+scale = Vector2( 2, 2 )
 SPEED = 88
 
 [node name="JumboTron" parent="." instance=ExtResource( 4 )]

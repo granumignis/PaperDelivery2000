@@ -1,9 +1,11 @@
 extends Node
 
+onready var main = get_tree()
 onready var Marquee = $Marquee
 onready var PaperBoy = $PaperBoy
 onready var JumboTron = $JumboTron
 var firstPlay = true
+
 
 export (int) onready var delivered = 0 setget set_delivered, get_delivered
 
@@ -25,8 +27,12 @@ func set_delivered(value):
 	JumboTron.setJumboTronMessage(str(delivered) + " Papers Delivered")
 	yield(get_tree().create_timer(3.0), "timeout")
 	if delivered >= 6:
+		PaperBoy.set_canshoot(false)
 		JumboTron.setJumboTronMessage("WIN")
-		PaperBoy.queue_free()
+		PaperBoy.set_showReticle(false)
+		yield(main.create_timer(9), "timeout")
+		main.quit()
+		#PaperBoy.queue_free()
 
 
 func get_delivered():

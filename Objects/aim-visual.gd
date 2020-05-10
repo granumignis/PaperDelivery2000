@@ -1,8 +1,10 @@
 extends Node2D
 
+export (bool) var showReticle = true
+onready var sprite = $Sprite
+
 func _process(delta):
 	var player = get_parent()
-	
 	# Mouse based aiming
 	rotation = player.get_local_mouse_position().angle()
 
@@ -16,3 +18,10 @@ func _process(delta):
 	if abs(xAxisRL) > deadzone || abs(yAxisUD) > deadzone:
 	    controllerangle = Vector2(xAxisRL, yAxisUD).angle()
 	    rotation = controllerangle
+
+func setVisibility(value):
+	showReticle = value
+	if showReticle == false:
+		sprite.set_self_modulate(Color( 0, 0, 0, 0 ))
+	if showReticle == true:
+		sprite.set_self_modulate(Color( 1, 1, 1, 1 ))
