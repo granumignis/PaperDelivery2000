@@ -2,7 +2,7 @@
 
 ## What is it?
 
-It's an browser-based game that involves Paper Delivery.
+It's a game that involves Paper Delivery.
 
 Currently not compatible with Mobile Devices. You'll want a device with a keyboard + mouse or dual-stick gamepad to play.
 
