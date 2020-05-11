@@ -4,6 +4,8 @@ onready var main = get_tree()
 onready var Marquee = $Marquee
 onready var PaperBoy = $PaperBoy
 onready var JumboTron = $JumboTron
+onready var MailBox = $MailBox
+onready var distance
 var firstPlay = true
 
 
@@ -41,8 +43,9 @@ func get_delivered():
 	return delivered
 
 func _on_MailBox_NewsPaper_Delivered():
-	self.set_delivered(1)
-	print(delivered)
+	distance = MailBox.global_position.distance_to(PaperBoy.global_position); 
+	print("distance to MailBox2: " + str(distance))
+
 
 
 func _on_PaperBoy_out_of_newspapers():
