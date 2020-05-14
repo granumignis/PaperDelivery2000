@@ -26,7 +26,7 @@ func _ready():
 
 func set_delivered(value):
 	delivered = value
-	JumboTron.setJumboTronMessage(str(delivered) + " Papers Delivered")
+	# JumboTron.setJumboTronMessage(str(delivered) + " Papers Delivered")
 	yield(get_tree().create_timer(3.0), "timeout")
 	if delivered >= 6:
 		PaperBoy.set_canshoot(false)
@@ -70,3 +70,4 @@ func _on_PaperBoy_shot_newspaper(papers_left):
 func addToScore(amountToAdd):
 	score = score + amountToAdd
 	print("New Score: " + str(score))
+	JumboTron.setJumboTronMessage("SCORE: " + str(score))
