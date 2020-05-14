@@ -7,7 +7,7 @@ onready var JumboTron = $JumboTron
 onready var MailBox = $MailBox
 onready var distance
 var firstPlay = true
-
+onready var score = 0
 
 export (int) onready var delivered = 0 setget set_delivered, get_delivered
 
@@ -42,10 +42,10 @@ func set_delivered(value):
 func get_delivered():
 	return delivered
 
-func _on_MailBox_NewsPaper_Delivered():
-	distance = MailBox.global_position.distance_to(PaperBoy.global_position); 
-	print("distance to MailBox2: " + str(distance))
-
+func _on_MailBox_NewsPaper_Delivered(mailboxName, mailboxPosition):
+	distance = mailboxPosition.distance_to(PaperBoy.global_position); 
+	print("distance to " + str(mailboxName) + ": " + str(distance))
+	addToScore(int(round(distance * 100)))
 
 
 func _on_PaperBoy_out_of_newspapers():
@@ -66,3 +66,7 @@ func _on_PaperBoy_shot_newspaper(papers_left):
 	# JumboTron.setJumboTronMessage("PAPERS LEFT: " + str(papers_left))
 	pass
 	
+
+func addToScore(amountToAdd):
+	score = score + amountToAdd
+	print("New Score: " + str(score))

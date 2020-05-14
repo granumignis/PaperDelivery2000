@@ -2,7 +2,7 @@ extends Area2D
 
 export(bool) var HasNewsPaperInIt = false
 onready var sprite = $Sprite
-
+onready var level = get_owner()
 
 signal NewsPaper_Delivered
 
@@ -14,7 +14,7 @@ func _on_MailBox_body_entered(body):
 		body.queue_free()
 		if HasNewsPaperInIt == false:
 			print(body.get_class() + " Entered Mailbox")
-			emit_signal("NewsPaper_Delivered")
+			level._on_MailBox_NewsPaper_Delivered(self.name, self.position)
 			var main = get_tree().current_scene		
 			main.delivered = main.delivered +1
 			HasNewsPaperInIt = true

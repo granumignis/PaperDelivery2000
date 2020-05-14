@@ -53,6 +53,5 @@ visible = false
 position = Vector2( 83.4853, 46.2981 )
 [connection signal="out_of_newspapers" from="PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
 [connection signal="shot_newspaper" from="PaperBoy" to="." method="_on_PaperBoy_shot_newspaper"]
-[connection signal="NewsPaper_Delivered" from="MailBox" to="." method="_on_MailBox_NewsPaper_Delivered"]
 
 [editable path="ExtraPaperSpawner"]
