@@ -22,7 +22,7 @@ func _ready():
 	JumboTron.setJumboTronMessage("Game Start: 0")
 	PaperBoy.set_process(true)
 	yield(get_tree().create_timer(1.0), "timeout")
-	JumboTron.setJumboTronMessage("")
+	JumboTron.setJumboTronMessage("SCORE: " + str(score))
 
 func set_delivered(value):
 	delivered = value
