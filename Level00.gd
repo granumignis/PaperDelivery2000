@@ -6,6 +6,10 @@ onready var PaperBoy = $PaperBoy
 onready var JumboTron = $JumboTron
 onready var MailBox = $MailBox
 onready var distance
+onready var scoreMultiplier
+
+var time_of_last_delivery = 10000
+
 var firstPlay = true
 onready var score = 0
 
@@ -28,6 +32,7 @@ func _ready():
 
 func set_delivered(value):
 	delivered = value
+	time_of_last_delivery = OS.get_unix_time()
 	wait(3)
 	if delivered >= 6:
 		PaperBoy.set_canshoot(false)
@@ -67,10 +72,17 @@ func _on_PaperBoy_shot_newspaper(papers_left):
 	pass
 	
 func addToScore(amountToAdd):
-	score = score + amountToAdd
-	print("New Score: " + str(score))
+	if (OS.get_unix_time() - time_of_last_delivery <= 1):
+		scoreMultiplier = 2
+		score = score + (amountToAdd * scoreMultiplier)
+	else:
+		scoreMultiplier = 1
+		score = score + (amountToAdd)
+		
+		
+	print("New Score: " + str(score) + " (X" + str(scoreMultiplier) + " BONUS!)")
 	JumboTron.setJumboTronMessage("SCORE: " + str(score))
-
+		
 func display_high_score():
 	var score_data = SaveAndLoad.load_score_from_file()
 	JumboTron.setJumboTronMessage("HIGH SCORE: " + str(score_data.highscore))
