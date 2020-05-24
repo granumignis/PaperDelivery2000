@@ -56,3 +56,6 @@ func set_canshoot(value):
 
 func set_showReticle(value):
 	aim_visual.setVisibility(false)
+
+func _on_PaperBoy_area_entered(area):
+	print("Area " + str(area) + " : " + area.name + " entered")
