@@ -15,8 +15,10 @@ GDScript Reference: https://docs.godotengine.org/en/stable/getting_started/scrip
 Ways:
 
  - Check out http://www.whereiputmystuff.com/paperdelivery2000/ for a live version of the game
- - Download the contents of the Export folder which contains exports for multiple platforms
-	 - Only the HTML5 Export has been tested
+ - Download the various Native Exported Versions via the URLs below (May not be tested)
+	 - http://whereiputmystuff.com/paperdelivery2000/PaperDelivery2000.exe
+	 - http://whereiputmystuff.com/paperdelivery2000/PaperDelivery2000.zip
+	 - http://whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Linux.zip
  - Clone this repository and open it in the Godot Engine IDE
  - Can't play it? :(
  	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4
