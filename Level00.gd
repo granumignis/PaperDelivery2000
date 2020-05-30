@@ -15,6 +15,10 @@ onready var score = 0
 
 export (int) onready var delivered = 0 setget set_delivered, get_delivered
 
+func _input(event):
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	display_high_score()
