@@ -3,7 +3,7 @@ extends Node
 onready var main = get_tree()
 onready var Marquee = $Marquee
 onready var PaperBoy = $PaperBoy
-onready var JumboTron = $JumboTron
+onready var JumboTron = $UI/JumboTron
 onready var MailBox = $MailBox
 onready var distance
 onready var scoreMultiplier
@@ -21,6 +21,7 @@ func _input(event):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	VisualServer.set_default_clear_color(Color.black)
 	display_high_score()
 	yield(get_tree().create_timer(3), "timeout")
 	JumboTron.setJumboTronMessage("Game Start: 3")

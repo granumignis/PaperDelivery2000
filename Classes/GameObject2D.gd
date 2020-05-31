@@ -7,7 +7,7 @@ onready var level = get_owner()
 signal NewsPaper_Delivered
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+	pass
 
 func _on_MailBox_body_entered(body):
 	if body.get_class() == "NewsPaper":
