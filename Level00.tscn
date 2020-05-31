@@ -21,28 +21,34 @@ __meta__ = {
 
 [node name="PaperBoy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 83.969, 47.553 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 3, 3 )
 SPEED = 88
 
 [node name="JumboTron" parent="." instance=ExtResource( 4 )]
 
 [node name="MailBox" parent="." instance=ExtResource( 1 )]
-position = Vector2( 119.678, 23.3346 )
+position = Vector2( 24.3963, 85.9256 )
+scale = Vector2( 3, 3 )
 
 [node name="MailBox2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 119.635, 47.0487 )
+position = Vector2( 154.177, 83.5591 )
+scale = Vector2( 3, 3 )
 
 [node name="MailBox3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 121.092, 73.1856 )
+position = Vector2( 239.896, 84.6813 )
+scale = Vector2( 3, 3 )
 
 [node name="MailBox4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 38.3606, 22.0971 )
+position = Vector2( 24.0313, -10.5442 )
+scale = Vector2( -3, 3 )
 
 [node name="MailBox5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 38.714, 44.5478 )
+position = Vector2( 107.915, -52.8153 )
+scale = Vector2( -3, 3 )
 
 [node name="MailBox6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 36.9462, 73.3624 )
+position = Vector2( 271.94, -10.2884 )
+scale = Vector2( -3, 3 )
 
 [node name="ExtraPapers" parent="." instance=ExtResource( 5 )]
 visible = false

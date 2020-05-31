@@ -1,7 +1,7 @@
 extends Area2D
 
 export(bool) var HasNewsPaperInIt = false
-onready var sprite = $Sprite
+onready var sprite = $Sprite_HD
 onready var level = get_owner()
 
 signal NewsPaper_Delivered
