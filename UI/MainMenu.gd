@@ -7,6 +7,10 @@ onready var selecter_StartGame = $MenuSelecter_StartGame
 onready var selecter_HowToPlay = $MenuSelecter_HowToPlay
 onready var selecter_Exit = $MenuSelecter_Exit
 
+func _input(event):
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+
 
 func _ready():
 	VisualServer.set_default_clear_color(Color.black);
