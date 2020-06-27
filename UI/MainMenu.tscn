@@ -1,69 +1,95 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Art/FontTry/BebasNeue Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://MainMenu_00.png" type="Texture" id=3]
+[ext_resource path="res://Art/Game-Resolution/MenuSelecter_StartGame.png" type="Texture" id=4]
+[ext_resource path="res://Art/Game-Resolution/MenuSelecter_HowToPlay.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 8
 font_data = ExtResource( 1 )
 
-[sub_resource type="Theme" id=3]
-default_font = SubResource( 2 )
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 1 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 3 )
+theme = SubResource( 2 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MainMenu_00" type="Sprite" parent="."]
+position = Vector2( 79.7124, 44.7344 )
+scale = Vector2( 0.0828415, 0.0828416 )
+texture = ExtResource( 3 )
+
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = 30.8284
 margin_top = 6.64645
 margin_right = 134.828
 margin_bottom = 22.6464
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Paper Delivery 2000"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-margin_top = 16.0
-margin_right = 160.0
-margin_bottom = 90.0
+[node name="StartGameButton" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 57.0
+margin_top = 18.0
+margin_right = 103.0
+margin_bottom = 40.0
+text = "Start Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="InstructionsButton" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 57.0
-margin_top = 12.0
+margin_top = 44.6412
 margin_right = 103.0
-margin_bottom = 62.0
-alignment = 1
-
-[node name="StartGameButton" type="Button" parent="CenterContainer/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0.0666667 )
-margin_right = 46.0
-margin_bottom = 14.0
-text = "Start Game"
-
-[node name="InstructionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 46.0
-margin_bottom = 32.0
+margin_bottom = 74.6412
 text = "Instructions"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 46.0
-margin_bottom = 50.0
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 69.421
+margin_top = 74.6412
+margin_right = 92.421
+margin_bottom = 88.6412
 text = "Exit"
-[connection signal="pressed" from="CenterContainer/VBoxContainer/StartGameButton" to="." method="_on_StartGameButton_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuSelecter_StartGame" type="Sprite" parent="."]
+visible = false
+position = Vector2( 56.8026, 24.8406 )
+scale = Vector2( 0.083, 0.083 )
+texture = ExtResource( 4 )
+
+[node name="MenuSelecter_HowToPlay" type="Sprite" parent="."]
+visible = false
+position = Vector2( 55.6258, 51.7713 )
+scale = Vector2( 0.083, 0.083 )
+texture = ExtResource( 5 )
+
+[node name="MenuSelecter_Exit" type="Sprite" parent="."]
+visible = false
+position = Vector2( 55.8078, 79.7021 )
+scale = Vector2( 0.083, 0.083 )
+texture = ExtResource( 5 )
+[connection signal="pressed" from="StartGameButton" to="." method="_on_StartGameButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
