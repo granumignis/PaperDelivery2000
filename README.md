@@ -58,5 +58,6 @@ Dual Stick GamePad (Tested on Xbox 360 Controller)
 
 
 ## SPECIAL THANKS
-(One of) My Brother(s) - Feedback and Gameplay Suggestions
-(One of) My Sister(s) - Feedback
+    (One of) My Brother(s) - Feedback and Gameplay Suggestions
+    (One of) My Sister(s) - Feedback
+
