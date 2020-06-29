@@ -73,8 +73,19 @@ func restart_game():
 	delivered = 0
 	
 func _on_PaperBoy_shot_newspaper(papers_left):
-	# JumboTron.setJumboTronMessage("PAPERS LEFT: " + str(papers_left))
-	pass
+	var tmpDelivered = delivered
+	yield(get_tree().create_timer(5), "timeout")
+	if delivered == tmpDelivered:
+		PaperBoy.CANSHOOT = false
+		print("You did not deliver the last thrown paper within 5 seconds")
+		update_score_data()
+		JumboTron.setJumboTronMessage("MISSED A MAILBOX")
+		yield(get_tree().create_timer(3), "timeout")
+		#JumboTron.setJumboTronMessage("MISSION FAILURE")
+		#yield(get_tree().create_timer(4), "timeout")
+		JumboTron.setJumboTronMessage("GAME OVER")
+		yield(get_tree().create_timer(4), "timeout")
+		get_tree().change_scene("res://UI/MainMenu.tscn")
 	
 func addToScore(amountToAdd):
 	if (OS.get_unix_time() - time_of_last_delivery <= 1):
