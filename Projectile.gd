@@ -9,3 +9,6 @@ func _on_VisibilityNotifier2D_viewport_exited(viewport):
 	queue_free()
 
 func get_class(): return "NewsPaper"
+
+
+
