@@ -51,6 +51,13 @@ Dual Stick GamePad (Tested on Xbox 360 Controller)
 
 ## HOW TO PLAY: TIPS
 
-	Don't run out of papers! (You only get 6!)
+	If you miss a mailbox, it's game over!
 	Score multipliers are applied based on your distance to the mailboxes!
 	Try to deliver two papers within one second, a point multiplier will be applied!
+
+
+
+## SPECIAL THANKS
+    (One of) My Brother(s) - Feedback and Gameplay Suggestions
+    (One of) My Sister(s) - Feedback
+
