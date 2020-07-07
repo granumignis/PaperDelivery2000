@@ -51,7 +51,7 @@ Dual Stick GamePad (Tested on Xbox 360 Controller)
 
 ## HOW TO PLAY: TIPS
 
-	If you miss a mailbox, it's game over!
+	If you miss a mailbox, it's game over - unless you deliver another paper within 5 seconds!
 	Score multipliers are applied based on your distance to the mailboxes!
 	Try to deliver two papers within one second, a point multiplier will be applied!
 
