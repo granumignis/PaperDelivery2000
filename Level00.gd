@@ -60,7 +60,8 @@ func _on_MailBox_NewsPaper_Delivered(mailboxName, mailboxPosition):
 	addToScore(int(round(distance * 100)))
 
 func _on_PaperBoy_out_of_newspapers():
-	PaperBoy.queue_free()
+	PaperBoy.set_canshoot(false)
+	PaperBoy.set_showReticle(false)
 	JumboTron.setJumboTronMessage("OUT OF PAPERS")
 	yield(get_tree().create_timer(5), "timeout")
 	JumboTron.setJumboTronMessage("TRY AGAIN")
@@ -76,8 +77,8 @@ func _on_PaperBoy_shot_newspaper(papers_left):
 	var tmpDelivered =  delivered
 	print ("papers_left: " + str(papers_left) + " " + "tmpDelivered" + " " + str(tmpDelivered))
 	yield(get_tree().create_timer(5), "timeout")
-	if delivered == tmpDelivered:
-		PaperBoy.CANSHOOT = false
+	if (delivered == tmpDelivered && PaperBoy.CANSHOOT == true):
+		PaperBoy.set_canshoot(false)
 		print("You did not deliver the last thrown paper within 5 seconds")
 		update_score_data()
 		JumboTron.setJumboTronMessage("MISSED A MAILBOX")
