@@ -1,0 +1,26 @@
+Little flow tweaks:
+
+
+Test 1: Win straight up
+=======
+Make it so you know where all of the mailboxes are
+Return to Title Screen when you win (just like test 2)
+Make it so pressing ESC or Start takes you to a pause menu
+
+
+Test 2: Miss a paper and wait 6 seconds
+=======
+Make the losing text appear in a different way, multi line text - more concise font
+
+
+
+
+Test 3: Miss a paper and recover
+=======
+make the 'you lost' proceedings happen faster
+Return to Title Screen when you lose (just like test 2)
+
+
+Test 4: Lose straight up
+=======
+Return to Title Screen when you lose (just like test 2)
