@@ -16,7 +16,7 @@ onready var aim_visual = $"Sprite/aim-visual"
 func _ready():
 	sprite.set_self_modulate(Color( 1, 1, 1, 0 ))
 	set_process(false)
-	
+
 func _process(delta):
 	moving = false
 	if Input.is_action_pressed("ui_right"):
@@ -31,7 +31,7 @@ func _process(delta):
 		move(0, SPEED, delta)
 	if Input.is_action_just_pressed("ui_accept"):
 		throw_newspaper()
-	
+
 func throw_newspaper():
 	if (CANSHOOT):
 		if AMMO >= 1:

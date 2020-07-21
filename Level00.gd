@@ -47,9 +47,7 @@ func set_delivered(value):
 		update_score_data()
 		check_for_new_high_score()
 		yield(get_tree().create_timer(3), "timeout")
-		JumboTron.setJumboTronMessage("PLAY AGAIN!")
-		yield(get_tree().create_timer(6), "timeout")
-		get_tree().change_scene("res://Level00.tscn")
+		get_tree().change_scene("res://UI/MainMenu.tscn")
 
 func get_delivered():
 	return delivered
