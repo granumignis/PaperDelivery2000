@@ -22,4 +22,4 @@ Return to Title Screen when you lose (just like test 2) [ x ]
 
 Test 4: Lose straight up
 =======
-Return to Title Screen when you lose (just like test 2)
+Return to Title Screen when you lose (just like test 2) [ x ]
