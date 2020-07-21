@@ -66,7 +66,7 @@ func _on_PaperBoy_out_of_newspapers():
 	update_score_data()
 	check_for_new_high_score()
 	yield(get_tree().create_timer(5), "timeout")
-	get_tree().change_scene("res://Level00.tscn")
+	get_tree().change_scene("res://UI/MainMenu.tscn")
 
 func restart_game():
 	delivered = 0
