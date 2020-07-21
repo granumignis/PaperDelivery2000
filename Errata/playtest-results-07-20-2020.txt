@@ -4,7 +4,7 @@ Little flow tweaks:
 Test 1: Win straight up
 =======
 Make it so you know where all of the mailboxes are
-Return to Title Screen when you win (just like test 2)
+Return to Title Screen when you win (just like test 2) [ x ]
 Make it so pressing ESC or Start takes you to a pause menu
 
 
