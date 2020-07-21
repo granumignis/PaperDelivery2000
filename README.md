@@ -21,7 +21,7 @@ Ways:
 	 - http://whereiputmystuff.com/paperdelivery2000/Downloads
  - Clone this repository and open it in the Godot Engine IDE to run or Export
  - Can't play it? :(
- 	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4
+ 	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4 (Out of Date)
 
 
 ## HOW TO PLAY: INPUT
@@ -52,6 +52,7 @@ Dual Stick GamePad (Tested on Xbox 360 Controller)
 ## HOW TO PLAY: TIPS
 
 	If you miss a mailbox, it's game over - unless you deliver another paper within 5 seconds!
+	Even if you recover and deliver another paper within 5 seconds of missing, game ends after last paper is gone.
 	Score multipliers are applied based on your distance to the mailboxes!
 	Try to deliver two papers within one second, a point multiplier will be applied!
 
