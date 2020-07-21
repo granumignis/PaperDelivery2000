@@ -14,11 +14,10 @@ Make the losing text appear in a different way, multi line text - more concise f
 
 
 
-
 Test 3: Miss a paper and recover
 =======
-make the 'you lost' proceedings happen faster
-Return to Title Screen when you lose (just like test 2)
+make the 'you lost' proceedings happen faster [ x ]
+Return to Title Screen when you lose (just like test 2) [ x ]
 
 
 Test 4: Lose straight up
