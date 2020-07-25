@@ -16,7 +16,7 @@ GDScript Reference: https://docs.godotengine.org/en/stable/getting_started/scrip
 ## Where do I get it?
 Ways:
 
- - Check out http://www.whereiputmystuff.com/paperdelivery2000/ for a live version of the game
+ - Check out http://www.whereiputmystuff.com/paperdelivery2000/ for a live version of the game (Out of date as of 07/24/20)
  - Download the various Native Exported Versions via the URL below (May not be tested)
 	 - http://whereiputmystuff.com/paperdelivery2000/Downloads (Out of date as of 07/24/20)
  - Clone this repository and open it in the Godot Engine IDE to run or Export
