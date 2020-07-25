@@ -18,7 +18,7 @@ Ways:
 
  - Check out http://www.whereiputmystuff.com/paperdelivery2000/ for a live version of the game
  - Download the various Native Exported Versions via the URL below (May not be tested)
-	 - http://whereiputmystuff.com/paperdelivery2000/Downloads
+	 - http://whereiputmystuff.com/paperdelivery2000/Downloads (Out of date as of 07/24/20)
  - Clone this repository and open it in the Godot Engine IDE to run or Export
  - Can't play it? :(
  	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4 (out of date as of 07/24/20)
