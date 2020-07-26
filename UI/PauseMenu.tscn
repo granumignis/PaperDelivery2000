@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Art/Game-Resolution/MenuSelecter_StartGame.png" type="Texture" id=2]
 
 [node name="PauseMenu" type="ColorRect"]
 pause_mode = 2
@@ -31,5 +32,15 @@ text = "Main Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MenuSelecter_ResumeGame" type="Sprite" parent="."]
+position = Vector2( 16.617, 33.9411 )
+scale = Vector2( 0.116117, 0.116117 )
+texture = ExtResource( 2 )
+
+[node name="MenuSelecter_MainMenu" type="Sprite" parent="."]
+position = Vector2( 16.9706, 61.1647 )
+scale = Vector2( 0.116117, 0.116117 )
+texture = ExtResource( 2 )
 [connection signal="pressed" from="ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
