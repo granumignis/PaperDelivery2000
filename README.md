@@ -12,16 +12,17 @@ Created in the Godot Engine utilizing it's 'GDScript' language (similar to Pytho
 
 GDScript Reference: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
 
+Related Trello Board: https://trello.com/b/xRUReMxu/paper-delivery-2000
 
 ## Where do I get it?
 Ways:
 
- - Check out http://www.whereiputmystuff.com/paperdelivery2000/ for a live version of the game (Out of date as of 07/24/20)
+ - Check out http://www.whereiputmystuff.com/paperdelivery2000/ for a live version of the game 
  - Download the various Native Exported Versions via the URL below (May not be tested)
-	 - http://whereiputmystuff.com/paperdelivery2000/Downloads (Out of date as of 07/24/20)
+	 - http://whereiputmystuff.com/paperdelivery2000/Downloads 
  - Clone this repository and open it in the Godot Engine IDE to run or Export
  - Can't play it? :(
- 	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4 (out of date as of 07/24/20)
+ 	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4
 
 
 ## HOW TO PLAY: INPUT
