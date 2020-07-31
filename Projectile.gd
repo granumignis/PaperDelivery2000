@@ -4,6 +4,7 @@ var velocity = Vector2.ZERO
 
 func _process(delta):
 	position += velocity * delta
+	rotation_degrees += 5.5
 
 func _on_VisibilityNotifier2D_viewport_exited(viewport):
 	queue_free()

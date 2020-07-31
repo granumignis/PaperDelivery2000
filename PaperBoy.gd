@@ -1,6 +1,6 @@
 extends Node2D
 
-const Newspaper = preload("res://Objects/TestProjectile.tscn")
+const Newspaper = preload("res://Objects/Newspaper.tscn")
 signal out_of_newspapers
 signal shot_newspaper(papers_left)
 
