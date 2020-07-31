@@ -46,16 +46,16 @@ Dual Stick GamePad (Tested on Xbox 360 Controller)
 
 ## HOW TO PLAY: VISUALS
 
-	That dotted line indicates where you are currently aiming
-	Those white box/post things around you are mailboxes
+	That 'red arc shape' near your character indicates (roughly) where you are currently aiming
 	The thing you are throwing is a newspaper
+	Those white box/post things around you are special 'newspaper delivery' boxes
 
 
 ## HOW TO PLAY: TIPS
 
-	If you miss a mailbox, it's game over - unless you deliver another paper within 5 seconds!
+	If you throw a paper and it misses a box, it's game over - unless you deliver another paper within 5 seconds!
 	Even if you recover and deliver another paper within 5 seconds of missing, game ends after last paper is gone.
-	Score multipliers are applied based on your distance to the mailboxes!
+	Score multipliers are applied based on your distance to the box!
 	Try to deliver two papers within one second, a point multiplier will be applied!
 
 
