@@ -6,9 +6,10 @@ It's a work-in-progress game that involves Paper Delivery.
 
 Currently not compatible with Mobile Devices. 
 
-You'll want a device with a keyboard + mouse or dual-stick gamepad to play.
+You'll want a device with a keyboard + mouse or dual-stick gamepad (preferred) to play.
 
-Created in the Godot Engine utilizing it's 'GDScript' language (similar to Python). Heavily based on learnings from HeartBeast's 1-Bit Godot Course:  [https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast](https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast)
+Created in the Godot Engine utilizing it's 'GDScript' language (similar to Python). 
+Heavily based on learnings from HeartBeast's 1-Bit Godot Course:  [https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast](https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast)
 
 GDScript Reference: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
 
@@ -18,7 +19,7 @@ Related Trello Board: https://trello.com/b/xRUReMxu/paper-delivery-2000
 Ways:
 
  - Check out http://www.whereiputmystuff.com/paperdelivery2000/ for a live version of the game 
- - Download the various Native Exported Versions via the URL below (May not be tested)
+ - Download the various Native Exported Versions via the URL below (Only Windows .exe has been tested)
 	 - http://whereiputmystuff.com/paperdelivery2000/Downloads 
  - Clone this repository and open it in the Godot Engine IDE to run or Export
  - Can't play it? :(
