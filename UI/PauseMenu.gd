@@ -21,21 +21,22 @@ func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		self.paused = !paused
 		
-	if Input.is_action_just_pressed("ui_up"):
-		if selectedMenuItem != minMenuItem:
-			selectedMenuItem -= 1 
-			print(str(selectedMenuItem))
-			highlightMenuItem(selectedMenuItem)
-	if Input.is_action_just_pressed("ui_down"):
-		if selectedMenuItem != maxMenuItem:
-			selectedMenuItem += 1 
-			print(str(selectedMenuItem))
-			highlightMenuItem(selectedMenuItem)
-	if Input.is_action_just_pressed("Menu_ChooseOption"):
-		if selectedMenuItem == 0:
-			_on_ResumeButton_pressed()
-		if selectedMenuItem == 1:
-			_on_MainMenuButton_pressed()
+	if (paused):
+		if Input.is_action_just_pressed("ui_up"):
+			if selectedMenuItem != minMenuItem:
+				selectedMenuItem -= 1 
+				print(str(selectedMenuItem))
+				highlightMenuItem(selectedMenuItem)
+		if Input.is_action_just_pressed("ui_down"):
+			if selectedMenuItem != maxMenuItem:
+				selectedMenuItem += 1 
+				print(str(selectedMenuItem))
+				highlightMenuItem(selectedMenuItem)
+		if Input.is_action_just_pressed("Menu_ChooseOption"):
+			if selectedMenuItem == 0:
+				_on_ResumeButton_pressed()
+			if selectedMenuItem == 1:
+				_on_MainMenuButton_pressed()	
 
 
 func _on_ResumeButton_pressed():
