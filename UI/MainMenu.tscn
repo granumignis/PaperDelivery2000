@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Art/FontTry/BebasNeue Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://MainMenu_00.png" type="Texture" id=3]
+[ext_resource path="res://Art/Game-Resolution/MainMenu_01.png" type="Texture" id=3]
 [ext_resource path="res://Art/Game-Resolution/MenuSelecter_StartGame.png" type="Texture" id=4]
 [ext_resource path="res://Art/Game-Resolution/MenuSelecter_HowToPlay.png" type="Texture" id=5]
 
@@ -65,6 +65,7 @@ __meta__ = {
 }
 
 [node name="ExitButton" type="Button" parent="."]
+visible = false
 margin_left = 69.421
 margin_top = 74.6412
 margin_right = 92.421
