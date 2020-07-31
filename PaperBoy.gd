@@ -12,6 +12,7 @@ export (bool) var CANSHOOT = true
 
 onready var sprite = $Sprite
 onready var aim_visual = $"Sprite/aim-visual"
+onready var throwpoint = $"Sprite/throwpoint"
 
 func _ready():
 	sprite.set_self_modulate(Color( 1, 1, 1, 0 ))
@@ -22,9 +23,11 @@ func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		move(SPEED, 0, delta)
 		sprite.flip_h = false
+		throwpoint.set_position(Vector2(2,-2))
 	if Input.is_action_pressed("ui_left"):
 		move(-SPEED, 0, delta)
 		sprite.flip_h = true
+		throwpoint.set_position(Vector2(-2,-2))
 	if Input.is_action_pressed("ui_up"):
 		move(0, -SPEED, delta)
 	if Input.is_action_pressed("ui_down"):
@@ -35,7 +38,7 @@ func _process(delta):
 func throw_newspaper():
 	if (CANSHOOT):
 		if AMMO >= 1:
-			var newspaper = Utils.instance_scene_on_main(Newspaper, aim_visual.global_position)
+			var newspaper = Utils.instance_scene_on_main(Newspaper, throwpoint.global_position)
 			newspaper.velocity = Vector2.RIGHT.rotated(aim_visual.rotation) * THROW_SPEED
 			newspaper.velocity.x *= sprite.scale.x
 			newspaper.rotation = newspaper.velocity.angle()
