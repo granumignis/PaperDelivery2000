@@ -1,16 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Art/aim-visual.png" type="Texture" id=1]
 [ext_resource path="res://Objects/aim-visual.gd" type="Script" id=2]
+[ext_resource path="res://Objects/aim-visual-redrawn-smaller.png" type="Texture" id=3]
 
 [node name="aim-visual" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 1, 0.164706, 0.164706, 1 )
+position = Vector2( 8, 0 )
+rotation = 1.5708
+scale = Vector2( 0.031, 0.031 )
+texture = ExtResource( 3 )
+
+[node name="ThrowAnchor" type="Position2D" parent="Sprite"]
+position = Vector2( 2.28882e-05, 533.333 )
+rotation = -1.5708
+scale = Vector2( 32, 32 )
+
+[node name="Sprite-Old" type="Sprite" parent="."]
+visible = false
+show_behind_parent = true
 position = Vector2( 7, -1 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( 0, -4 )
-
-[node name="ThrowAnchor" type="Position2D" parent="Sprite"]
-position = Vector2( -7, 1 )
