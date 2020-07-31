@@ -12,6 +12,7 @@ Created in the Godot Engine utilizing it's 'GDScript' language (similar to Pytho
 
 GDScript Reference: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
 
+Related Trello Board: https://trello.com/b/xRUReMxu/paper-delivery-2000
 
 ## Where do I get it?
 Ways:
