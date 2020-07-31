@@ -1,10 +1,20 @@
 extends Area2D
 
+export(bool) onready var isFlipped
 export(bool) var HasNewsPaperInIt = false
 onready var sprite = $Sprite_HD
 onready var level = get_owner()
 
+onready var flippedSprite = load("res://Art/Game-Resolution/flipped-newspaper-box.png")
+
 signal NewsPaper_Delivered
+
+func _ready():
+	print(sprite.texture)
+	if (isFlipped):
+		print("isflipped!")
+		sprite.set_texture(flippedSprite)
+	
 
 func _on_VisibilityNotifier2D_screen_exited():
 	pass
