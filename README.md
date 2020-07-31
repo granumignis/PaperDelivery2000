@@ -9,6 +9,7 @@ Currently not compatible with Mobile Devices.
 You'll want a device with a keyboard + mouse or dual-stick gamepad (preferred) to play.
 
 Created in the Godot Engine utilizing it's 'GDScript' language (similar to Python). 
+
 Heavily based on learnings from HeartBeast's 1-Bit Godot Course:  [https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast](https://courses.heartgamedev.com/p/1-bit-godot-course-by-heartbeast)
 
 GDScript Reference: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
