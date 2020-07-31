@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Classes/Projectile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/paper.png" type="Texture" id=2]
 [ext_resource path="res://Art/Game-Resolution/newspaper.png" type="Texture" id=3]
+[ext_resource path="res://Art/extrapapers.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Thrown"
@@ -11,7 +12,7 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( -0.1 ),
 "transitions": PoolRealArray( 1 ),
@@ -47,3 +48,8 @@ anims/Thrown = SubResource( 1 )
 [node name="CollisionShape2D" parent="." index="3"]
 position = Vector2( 0, -0.497184 )
 shape = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="." index="4"]
+position = Vector2( 2.40217, 1.80614 )
+scale = Vector2( 0.142083, 0.142083 )
+texture = ExtResource( 4 )
