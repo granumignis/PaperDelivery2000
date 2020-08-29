@@ -69,9 +69,28 @@ current = true
 smoothing_enabled = true
 smoothing_speed = 20.0
 
+[node name="MiniMapCamera" type="Camera2D" parent="Camera"]
+current = true
+zoom = Vector2( 1.6, 1.6 )
+smoothing_enabled = true
+smoothing_speed = 20.0
+
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
 [node name="JumboTron" parent="UI" instance=ExtResource( 4 )]
+
+[node name="ViewportContainer" type="ViewportContainer" parent="UI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -33.5471
+margin_top = -34.8734
+margin_right = -0.54715
+margin_bottom = -1.87338
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="out_of_newspapers" from="PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
 [connection signal="shot_newspaper" from="PaperBoy" to="." method="_on_PaperBoy_shot_newspaper"]
 
