@@ -1,5 +1,7 @@
 extends Area2D
 
+var minimap_icon = "box"
+
 export(bool) var isFlipped
 export(bool) var HasNewsPaperInIt = false
 onready var sprite = $Sprite_HD
@@ -30,4 +32,5 @@ func _on_MailBox_body_entered(body):
 			main.delivered = main.delivered +1
 			HasNewsPaperInIt = true
 			sprite.set_self_modulate(Color( 0, 0.39, 0, 1 ))
+			emit_signal("removed", self)
 

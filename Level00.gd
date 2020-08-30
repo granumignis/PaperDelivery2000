@@ -8,6 +8,7 @@ onready var MailBox = $MailBox
 onready var distance
 onready var scoreMultiplier
 
+
 var time_of_last_delivery = 10000
 
 var firstPlay = true
@@ -34,6 +35,9 @@ func _ready():
 	PaperBoy.set_process(true)
 	yield(get_tree().create_timer(1), "timeout")
 	JumboTron.setJumboTronMessage("SCORE: " + str(score))
+	
+	for object in get_tree().get_nodes_in_group("minimap_objects"):
+		object.connect("removed", $CanvasLayer/MiniMap, "on_object_removed")
 
 func set_delivered(value):
 	delivered = value
@@ -116,3 +120,11 @@ func check_for_new_high_score():
 
 func wait(delaySeconds):
 	yield(get_tree().create_timer(delaySeconds), "timeout")
+
+
+func _on_MiniMap_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == BUTTON_WHEEL_UP:
+			self.zoom += 0.1
+		if event.button_index == BUTTON_WHEEL_DOWN:
+			self.zoom -= 0.1
