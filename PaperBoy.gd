@@ -4,7 +4,6 @@ const Newspaper = preload("res://Objects/NewsPaper.tscn")
 signal out_of_newspapers
 signal shot_newspaper(papers_left)
 
-var minimap_icon = "player"
 
 var moving = false
 export(int) var SPEED = 157

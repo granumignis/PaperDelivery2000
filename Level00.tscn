@@ -24,9 +24,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PaperBoy" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 3 )]
+[node name="PaperBoy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 83.969, 47.553 )
 scale = Vector2( 3, 3 )
 SPEED = 88
@@ -110,6 +108,7 @@ script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+player = NodePath("../../PaperBoy")
 
 [node name="Frame" type="NinePatchRect" parent="UI/MiniMap"]
 margin_left = 5.0
@@ -146,6 +145,7 @@ position = Vector2( 32, 32 )
 texture = ExtResource( 9 )
 
 [node name="boxmarker" type="Sprite" parent="UI/MiniMap/MarginContainer/Grid"]
+visible = false
 position = Vector2( 32, 32 )
 texture = ExtResource( 10 )
 [connection signal="out_of_newspapers" from="PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
