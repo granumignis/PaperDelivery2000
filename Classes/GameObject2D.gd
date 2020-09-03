@@ -10,7 +10,7 @@ onready var level = get_owner()
 onready var flippedSprite = load("res://Art/Game-Resolution/flipped-newspaper-box.png")
 
 signal NewsPaper_Delivered
-
+signal removed
 	
 func _ready():
 	print(sprite.texture)

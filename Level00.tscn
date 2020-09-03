@@ -41,33 +41,33 @@ scale = Vector2( 3, 3 )
 [node name="MailBox2" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 154.177, 83.5591 )
+position = Vector2( 160, 85.9256 )
 scale = Vector2( 3, 3 )
 
 [node name="MailBox3" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 154.177, 34.3331 )
+position = Vector2( 160, 0 )
 scale = Vector2( 3, 3 )
 
 [node name="MailBox4" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 25.3244, 28.3466 )
+position = Vector2( 160, -76.5031 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
 [node name="MailBox5" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 61.5995, 87.9387 )
+position = Vector2( 25.3244, -85.2682 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
 [node name="MailBox6" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 119.205, 87.9387 )
+position = Vector2( 25.3244, -7.77273 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
@@ -150,6 +150,12 @@ position = Vector2( 32, 32 )
 texture = ExtResource( 10 )
 [connection signal="out_of_newspapers" from="PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
 [connection signal="shot_newspaper" from="PaperBoy" to="." method="_on_PaperBoy_shot_newspaper"]
+[connection signal="removed" from="MailBox" to="UI/MiniMap" method="_on_MailBox_removed"]
+[connection signal="removed" from="MailBox2" to="UI/MiniMap" method="_on_MailBox_removed"]
+[connection signal="removed" from="MailBox3" to="UI/MiniMap" method="_on_MailBox_removed"]
+[connection signal="removed" from="MailBox4" to="UI/MiniMap" method="_on_MailBox_removed"]
+[connection signal="removed" from="MailBox5" to="UI/MiniMap" method="_on_MailBox_removed"]
+[connection signal="removed" from="MailBox6" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="gui_input" from="UI/MiniMap" to="." method="_on_MiniMap_gui_input"]
 
 [editable path="PaperBoy"]

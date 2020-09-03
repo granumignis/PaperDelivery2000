@@ -15,18 +15,18 @@ var markers = {}
 func _ready():
 	player_marker.position = grid.rect_size / 2
 	grid_scale = grid.rect_size / (get_viewport_rect().size * zoom)
-	print("grid.rect_size: " + str(grid.rect_size))
-	print("grid_scale: " + str(grid_scale))
+	# print("grid.rect_size: " + str(grid.rect_size))
+	# print("grid_scale: " + str(grid_scale))
 	
 	var map_objects = get_tree().get_nodes_in_group("minimap_objects")
 	for item in map_objects:
-		print(item.get_name())
-		print(item.minimap_icon)
+		# print(item.get_name())
+		# print(item.minimap_icon)
 		var new_marker = icons[item.minimap_icon].duplicate()
-		print(icons[item.minimap_icon].get_name())
+		# print(icons[item.minimap_icon].get_name())
 		grid.add_child(new_marker)
 		new_marker.show()
-		print(new_marker.name + " " + str(new_marker.global_position)) 
+		# print(new_marker.name + " " + str(new_marker.global_position)) 
 		markers[item] = new_marker
 
 func _process(delta):
@@ -52,6 +52,7 @@ func _process(delta):
 		
 		
 func _on_object_removed(object):
+	print("_on_object_removed: " + str(object))
 	if object in markers:
 		markers[object].queue_free()
 		markers.erase(object)
@@ -59,3 +60,10 @@ func _on_object_removed(object):
 func set_zoom(value):
 	zoom = clamp(value, 0.5, 5)
 	grid_scale = grid.rect_size / (get_viewport_rect().size * zoom)
+
+
+func _on_MailBox_removed(object):
+	print("_on_object_removed: " + str(object.get_name()))
+	if object in markers:
+		markers[object].queue_free()
+		markers.erase(object)

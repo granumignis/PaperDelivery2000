@@ -7,7 +7,7 @@ onready var JumboTron = $UI/JumboTron
 onready var MailBox = $MailBox
 onready var distance
 onready var scoreMultiplier
-
+onready var numberOfMailBoxes = 0
 
 var time_of_last_delivery = 10000
 
@@ -36,14 +36,22 @@ func _ready():
 	yield(get_tree().create_timer(1), "timeout")
 	JumboTron.setJumboTronMessage("SCORE: " + str(score))
 	
+	# Commenting this out as it is not working
+	# Manually connecting signal in editor instead
+	
 	for object in get_tree().get_nodes_in_group("minimap_objects"):
-		object.connect("removed", $CanvasLayer/MiniMap, "on_object_removed")
-
+		print("listing minimap_objects: " + str(object.get_name()))
+		# object.connect("removed", $UI/MiniMap, "on_object_removed")
+		numberOfMailBoxes += 1
+		print("numberOfMailBoxes: " + str(numberOfMailBoxes))
+	PaperBoy.AMMO = numberOfMailBoxes
+	
+	
 func set_delivered(value):
 	delivered = value
 	time_of_last_delivery = OS.get_unix_time()
 	wait(3)
-	if delivered >= 6:
+	if delivered >= numberOfMailBoxes:
 		PaperBoy.set_canshoot(false)
 		JumboTron.setJumboTronMessage("WIN")
 		PaperBoy.set_showReticle(false)
