@@ -36,12 +36,10 @@ func _ready():
 	yield(get_tree().create_timer(1), "timeout")
 	JumboTron.setJumboTronMessage("SCORE: " + str(score))
 	
-	# Commenting this out as it is not working
-	# Manually connecting signal in editor instead
 	
 	for object in get_tree().get_nodes_in_group("minimap_objects"):
 		print("listing minimap_objects: " + str(object.get_name()))
-		# object.connect("removed", $UI/MiniMap, "on_object_removed")
+		# object.connect("removed", $UI/MiniMap, "on_object_removed") 
 		numberOfMailBoxes += 1
 		print("numberOfMailBoxes: " + str(numberOfMailBoxes))
 	PaperBoy.AMMO = numberOfMailBoxes

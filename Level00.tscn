@@ -111,8 +111,6 @@ __meta__ = {
 player = NodePath("../../PaperBoy")
 
 [node name="Frame" type="NinePatchRect" parent="UI/MiniMap"]
-modulate = Color( 0, 0, 0, 1 )
-self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 77.0
@@ -124,6 +122,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/MiniMap"]
+self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 77.0
@@ -134,7 +133,6 @@ custom_constants/margin_left = 4
 custom_constants/margin_bottom = 4
 
 [node name="Grid" type="TextureRect" parent="UI/MiniMap/MarginContainer"]
-self_modulate = Color( 0.172549, 0.921569, 0.14902, 1 )
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 68.0
