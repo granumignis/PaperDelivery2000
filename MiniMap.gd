@@ -1,7 +1,7 @@
 extends MarginContainer
 
 export (NodePath) var player
-export var zoom = 1.0 setget set_zoom
+export var zoom = 1.5 setget set_zoom
 
 onready var grid = $MarginContainer/Grid
 onready var player_marker = $MarginContainer/Grid/playermarker
@@ -36,7 +36,7 @@ func _process(delta):
 	player_marker.rotation = get_node(player).rotation + PI/2
 	
 	for item in markers:
-		var obj_pos = (item.position - get_node(player).position) * grid_scale * grid.rect_size / 2
+		var obj_pos = (item.position - get_node(player).position) * grid_scale + grid.rect_size / 2
 		
 		if grid.get_rect().has_point(obj_pos + grid.rect_position):
 			pass
