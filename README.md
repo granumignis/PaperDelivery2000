@@ -24,7 +24,7 @@ Ways:
 	 - http://whereiputmystuff.com/paperdelivery2000/Downloads 
  - Clone this repository and open it in the Godot Engine IDE to run or Export
  - Can't play it? :(
- 	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4 (out of date as of 09/02/2020)
+ 	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4
 
 
 ## HOW TO PLAY: INPUT
