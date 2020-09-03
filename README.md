@@ -2,7 +2,7 @@
 
 ## What is it?
 
-It's a work-in-progress game that involves Paper Delivery.
+It's a work-in-progress / prototype game that involves Paper Delivery.
 
 Currently not compatible with Mobile Devices. 
 
@@ -20,11 +20,11 @@ Related Trello Board: https://trello.com/b/xRUReMxu/paper-delivery-2000
 Ways:
 
  - Check out http://www.whereiputmystuff.com/paperdelivery2000/ for a live version of the game 
- - Download the various Native Exported Versions via the URL below (Only Windows .exe has been tested)
+ - Download a native Windows version of the game via the folder linked below:
 	 - http://whereiputmystuff.com/paperdelivery2000/Downloads 
  - Clone this repository and open it in the Godot Engine IDE to run or Export
  - Can't play it? :(
- 	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4
+ 	- View the demonstration video at http://www.whereiputmystuff.com/paperdelivery2000/PaperDelivery2000_Demonstration_Video.mp4 (out of date as of 09/02/2020)
 
 
 ## HOW TO PLAY: INPUT
@@ -58,6 +58,7 @@ Dual Stick GamePad (Tested on Xbox 360 Controller)
 	Even if you recover and deliver another paper within 5 seconds of missing, game ends after last paper is gone.
 	Score multipliers are applied based on your distance to the box!
 	Try to deliver two papers within one second, a point multiplier will be applied!
+	You only get 6 papers, but if you throw rapidly - you might somehow throw a few more! (yes, this is a bug)
 
 
 
