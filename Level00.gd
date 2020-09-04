@@ -8,6 +8,7 @@ onready var MailBox = $MailBox
 onready var distance
 onready var scoreMultiplier
 onready var numberOfMailBoxes = 0
+onready var paperdisplay = get_tree().get_nodes_in_group("numpaperdisplay")
 
 var time_of_last_delivery = 10000
 
@@ -15,6 +16,7 @@ var firstPlay = true
 onready var score = 0
 
 export (int) onready var delivered = 0 setget set_delivered, get_delivered
+
 
 func _input(event):
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -43,6 +45,7 @@ func _ready():
 		numberOfMailBoxes += 1
 		print("numberOfMailBoxes: " + str(numberOfMailBoxes))
 	PaperBoy.AMMO = numberOfMailBoxes
+	updatePaperDisplay()
 	
 	
 func set_delivered(value):
@@ -84,16 +87,16 @@ func restart_game():
 func _on_PaperBoy_shot_newspaper(papers_left):
 	var tmpDelivered =  delivered
 	print ("papers_left: " + str(papers_left) + " " + "tmpDelivered" + " " + str(tmpDelivered))
-	yield(get_tree().create_timer(5), "timeout")
-	if (delivered == tmpDelivered && PaperBoy.CANSHOOT == true):
-		PaperBoy.set_canshoot(false)
-		print("You did not deliver the last thrown paper within 5 seconds")
-		update_score_data()
-		JumboTron.setJumboTronMessage("LAST THROW MISSED")
-		yield(get_tree().create_timer(3), "timeout")
-		JumboTron.setJumboTronMessage("GAME OVER")
-		yield(get_tree().create_timer(4), "timeout")
-		get_tree().change_scene("res://UI/MainMenu.tscn")
+	# yield(get_tree().create_timer(5), "timeout")
+	# if (delivered == tmpDelivered && PaperBoy.CANSHOOT == true):
+	#	PaperBoy.set_canshoot(false)
+	#	print("You did not deliver the last thrown paper within 5 seconds")
+#		update_score_data()
+	#	JumboTron.setJumboTronMessage("LAST THROW MISSED")
+	#	yield(get_tree().create_timer(3), "timeout")
+	#	JumboTron.setJumboTronMessage("GAME OVER")
+	#	yield(get_tree().create_timer(4), "timeout")
+	#	get_tree().change_scene("res://UI/MainMenu.tscn")
 	
 func addToScore(amountToAdd):
 	if (OS.get_unix_time() - time_of_last_delivery <= 1):
@@ -134,3 +137,7 @@ func _on_MiniMap_gui_input(event):
 			self.zoom += 0.1
 		if event.button_index == BUTTON_WHEEL_DOWN:
 			self.zoom -= 0.1
+
+func updatePaperDisplay():
+	for item in paperdisplay:
+		item.text = str(PaperBoy.AMMO)

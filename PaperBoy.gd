@@ -8,12 +8,14 @@ signal shot_newspaper(papers_left)
 var moving = false
 export(int) var SPEED = 157
 export(int) var THROW_SPEED = 157
-export(int) var AMMO = 6
+export(int) var AMMO = 5
 export (bool) var CANSHOOT = true
 
 onready var sprite = $Sprite
 onready var aim_visual = $"Sprite/aim-visual"
 onready var throwpoint = $"Sprite/throwpoint"
+onready var extrapapersobjects
+onready var paperdisplay = get_tree().get_nodes_in_group("numpaperdisplay")
 
 func _ready():
 	sprite.set_self_modulate(Color( 1, 1, 1, 0 ))
@@ -44,6 +46,7 @@ func throw_newspaper():
 			newspaper.velocity.x *= sprite.scale.x
 			newspaper.rotation = newspaper.velocity.angle()
 			AMMO = AMMO - 1
+			updatePaperDisplay()
 			print("CURRENT AMMO: "+ str(AMMO))
 			emit_signal("shot_newspaper", AMMO)
 		else:
@@ -63,3 +66,13 @@ func set_showReticle(value):
 
 func _on_PaperBoy_area_entered(area):
 	print("Area " + str(area) + " : " + area.name + " entered")
+	var extrapapersobjects = get_tree().get_nodes_in_group("extrapapers")
+	for item in extrapapersobjects:
+		if str(area) == str(item):
+			AMMO += 5
+			updatePaperDisplay()
+			print("You picked up 5 extra papers!")
+
+func updatePaperDisplay():
+	for item in paperdisplay:
+		item.text = str(AMMO)
