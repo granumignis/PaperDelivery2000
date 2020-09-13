@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Objects/MailBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Level00.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://UI/minimap/playermarker.png" type="Texture" id=9]
 [ext_resource path="res://UI/minimap/undelivered_paperbox_marker.png" type="Texture" id=10]
 [ext_resource path="res://UI/minimap/minimap_background.png" type="Texture" id=11]
+[ext_resource path="res://Art/Game-Resolution/level00-background.png" type="Texture" id=12]
 [ext_resource path="res://MiniMap.gd" type="Script" id=13]
 
 [sub_resource type="Theme" id=1]
@@ -27,6 +28,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Level00-Background" type="Sprite" parent="."]
+position = Vector2( 128.583, -15.1976 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 12 )
+
 [node name="PaperBoy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 83.969, 47.553 )
 scale = Vector2( 3, 3 )
@@ -38,137 +44,67 @@ remote_path = NodePath("../../Camera")
 [node name="MailBox" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 24.3963, 85.9256 )
+position = Vector2( 34.6415, 99.9988 )
 scale = Vector2( 3, 3 )
 
 [node name="MailBox2" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 160, 85.9256 )
+position = Vector2( 130.469, 96.2459 )
 scale = Vector2( 3, 3 )
 
 [node name="MailBox3" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 160, 0 )
+position = Vector2( 184.394, 39.9792 )
 scale = Vector2( 3, 3 )
 
 [node name="MailBox4" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 160, -76.5031 )
+position = Vector2( 176.27, -47.8468 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
 [node name="MailBox5" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 25.3244, -85.2682 )
+position = Vector2( 23.8347, -94.9444 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
 [node name="MailBox6" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 25.3244, -7.77273 )
+position = Vector2( 23.8347, -24.6606 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
 [node name="MailBox7" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 59.869, -173.327 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox9" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 189.637, -252.226 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox10" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 380.656, -270.913 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox17" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 393.432, -380.422 )
+position = Vector2( 135.253, -112.665 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
 [node name="MailBox11" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 386.885, -113.115 )
+position = Vector2( 276.354, 39.7816 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
 [node name="MailBox12" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 522.881, -116.23 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox13" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 657.84, -117.268 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox14" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 774.112, -117.268 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox15" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 656.802, -275.066 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox18" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 638.551, -379.099 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox19" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 640.909, -499.395 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox20" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 405.035, -497.036 )
-scale = Vector2( -3, 3 )
-isFlipped = true
-
-[node name="MailBox16" parent="." groups=[
-"minimap_objects",
-] instance=ExtResource( 1 )]
-position = Vector2( 768.922, -274.027 )
+position = Vector2( -12.1499, 55.1266 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
 [node name="MailBox8" parent="." groups=[
 "minimap_objects",
 ] instance=ExtResource( 1 )]
-position = Vector2( 270.818, -118.143 )
+position = Vector2( 280.122, -49.2934 )
 scale = Vector2( -3, 3 )
 isFlipped = true
 
@@ -180,22 +116,12 @@ position = Vector2( 96.6969, 83.4387 )
 [node name="ExtraPapers2" parent="." groups=[
 "extrapapers",
 ] instance=ExtResource( 5 )]
-position = Vector2( 197.99, -144.586 )
+position = Vector2( 69.969, -128.965 )
 
 [node name="ExtraPapers3" parent="." groups=[
 "extrapapers",
 ] instance=ExtResource( 5 )]
-position = Vector2( 439.769, -156.928 )
-
-[node name="ExtraPapers4" parent="." groups=[
-"extrapapers",
-] instance=ExtResource( 5 )]
-position = Vector2( 444.269, -381.849 )
-
-[node name="ExtraPapers5" parent="." groups=[
-"extrapapers",
-] instance=ExtResource( 5 )]
-position = Vector2( 752.904, -156.928 )
+position = Vector2( 248.82, -16.5918 )
 
 [node name="ExtraPaperSpawner" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -289,6 +215,8 @@ __meta__ = {
 position = Vector2( 21.8672, 83.4387 )
 scale = Vector2( 0.118421, 0.118421 )
 texture = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="."]
 [connection signal="out_of_newspapers" from="PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
 [connection signal="shot_newspaper" from="PaperBoy" to="." method="_on_PaperBoy_shot_newspaper"]
 [connection signal="removed" from="MailBox" to="UI/MiniMap" method="_on_MailBox_removed"]
@@ -298,18 +226,8 @@ texture = ExtResource( 8 )
 [connection signal="removed" from="MailBox5" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBox6" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBox7" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox9" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox10" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox17" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBox11" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBox12" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox13" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox14" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox15" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox18" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox19" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox20" to="UI/MiniMap" method="_on_MailBox_removed"]
-[connection signal="removed" from="MailBox16" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBox8" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="gui_input" from="UI/MiniMap" to="." method="_on_MiniMap_gui_input"]
 

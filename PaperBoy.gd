@@ -72,7 +72,13 @@ func _on_PaperBoy_area_entered(area):
 			AMMO += 5
 			updatePaperDisplay()
 			print("You picked up 5 extra papers!")
-
+	var collisionobjects = get_tree().get_nodes_in_group("collision")
+	for item in collisionobjects:
+		if str(area) == str(item):
+			AMMO += 5
+			updatePaperDisplay()
+			print("You contacted a collisionobject!")
+			
 func updatePaperDisplay():
 	for item in paperdisplay:
 		item.text = str(AMMO)
