@@ -2,13 +2,15 @@ extends Node
 
 onready var main = get_tree()
 onready var Marquee = $Marquee
-onready var PaperBoy = $PaperBoy
+onready var PaperBoy = $PaperBoy/PaperBoy
+onready var PaperBoyPhyz = $PaperBoy
 onready var JumboTron = $UI/JumboTron
 onready var MailBox = $MailBox
 onready var distance
 onready var scoreMultiplier
 onready var numberOfMailBoxes = 0
 onready var paperdisplay = get_tree().get_nodes_in_group("numpaperdisplay")
+onready var maincam = $Camera
 
 var time_of_last_delivery = 10000
 
@@ -22,6 +24,9 @@ func _input(event):
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 
+func _proces():
+	maincam.position.x = PaperBoyPhyz.position.x
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	VisualServer.set_default_clear_color(Color.black)

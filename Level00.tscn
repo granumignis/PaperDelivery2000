@@ -42,26 +42,33 @@ polygon = PoolVector2Array( -21.8748, -18.8748, 43.5357, -25.2253, 40.5721, -66.
 position = Vector2( 128.583, -15.1976 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="PhysicsPlayer" type="KinematicBody2D" parent="."]
+[node name="PaperBoy" type="KinematicBody2D" parent="."]
+position = Vector2( 83.969, 34.3331 )
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicsPlayer"]
-position = Vector2( 83.4853, -2.51306 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PaperBoy"]
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Sprite" type="Sprite" parent="PhysicsPlayer/CollisionShape2D"]
-position = Vector2( 0.483704, 0 )
+[node name="Sprite" type="Sprite" parent="PaperBoy/CollisionShape2D"]
+visible = false
+position = Vector2( -3.8147e-06, 0 )
 scale = Vector2( 0.154613, 0.357876 )
 texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="PaperBoy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 83.969, 47.553 )
+[node name="PaperBoy" parent="PaperBoy" instance=ExtResource( 3 )]
+position = Vector2( 0, 13.2199 )
 scale = Vector2( 3, 3 )
 SPEED = 88
-
-[node name="CameraFollow" parent="PaperBoy" index="4"]
-remote_path = NodePath("../../Camera")
 
 [node name="MailBox" parent="." groups=[
 "minimap_objects",
@@ -237,8 +244,8 @@ __meta__ = {
 position = Vector2( 21.8672, 83.4387 )
 scale = Vector2( 0.118421, 0.118421 )
 texture = ExtResource( 8 )
-[connection signal="out_of_newspapers" from="PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
-[connection signal="shot_newspaper" from="PaperBoy" to="." method="_on_PaperBoy_shot_newspaper"]
+[connection signal="out_of_newspapers" from="PaperBoy/PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
+[connection signal="shot_newspaper" from="PaperBoy/PaperBoy" to="." method="_on_PaperBoy_shot_newspaper"]
 [connection signal="removed" from="MailBox" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBox2" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBox3" to="UI/MiniMap" method="_on_MailBox_removed"]
@@ -250,7 +257,5 @@ texture = ExtResource( 8 )
 [connection signal="removed" from="MailBox12" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBox8" to="UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="gui_input" from="UI/MiniMap" to="." method="_on_MiniMap_gui_input"]
-
-[editable path="PaperBoy"]
 
 [editable path="ExtraPaperSpawner"]
