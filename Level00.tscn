@@ -16,10 +16,10 @@
 [ext_resource path="res://PhysicsPlayer.gd" type="Script" id=14]
 [ext_resource path="res://icon.png" type="Texture" id=15]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.60022, 11.7737 )
 
-[sub_resource type="Theme" id=1]
+[sub_resource type="Theme" id=2]
 
 [node name="Level00" type="Node"]
 script = ExtResource( 2 )
@@ -33,10 +33,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerBlocker" type="KinematicBody2D" parent="."]
+[node name="PlayerBlocker2" type="KinematicBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerBlocker"]
-polygon = PoolVector2Array( -21.8748, -18.8748, 43.5357, -25.2253, 40.5721, -66.5038, -32.459, -58.2481, -29.2837, -17.8164 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerBlocker2"]
+position = Vector2( -63.1443, 116.365 )
+polygon = PoolVector2Array( -27.1502, 14.0464, 455.255, 15.4893, 388.882, -284.15, 26.2366, -280.784, 27.6795, -263.469, 259.023, -262.507, 261.427, -230.283, 206.598, -224.03, 205.155, -208.158, 259.504, -206.715, 257.58, -182.667, 282.59, -183.148, 285.476, -192.768, 357.62, -193.249, 357.139, 0.098465, 287.399, -0.863449, 282.109, -70.603, 262.389, -72.0459, 223.912, -63.8696, 225.836, -46.0739, 268.161, -39.8214, 268.161, 0.579422, 37.7798, 0.098465, 36.8178, -4.71117, 38.2607, -11.9256, 44.0323, -17.6972, 43.5357, -25.2253, 43.9347, -34.9883, 76.5129, -42.429, 76.1107, -59.7237, 40.516, -56.7072, 36.3369, -95.1321, 32.4892, -137.938, 33.9321, -165.353, 31.0463, -209.12, 27.1986, -262.988, -33.4027, -265.393, -29.2837, -17.8164 )
 
 [node name="Level00-Background" type="Sprite" parent="."]
 position = Vector2( 128.583, -15.1976 )
@@ -51,7 +52,7 @@ position = Vector2( 83.969, 34.3331 )
 script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PaperBoy"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -69,6 +70,18 @@ __meta__ = {
 position = Vector2( 0, 13.2199 )
 scale = Vector2( 3, 3 )
 SPEED = 88
+
+[node name="MakeCameraFollow" type="RemoteTransform2D" parent="PaperBoy"]
+remote_path = NodePath("../../Camera")
+update_rotation = false
+update_scale = false
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 83.969, 34.3331 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+smoothing_speed = 20.0
 
 [node name="MailBox" parent="." groups=[
 "minimap_objects",
@@ -156,13 +169,6 @@ position = Vector2( 248.82, -16.5918 )
 visible = false
 position = Vector2( 83.4853, 46.2981 )
 
-[node name="Camera" type="Camera2D" parent="."]
-position = Vector2( 83.969, 23.553 )
-current = true
-zoom = Vector2( 1.5, 1.5 )
-smoothing_enabled = true
-smoothing_speed = 20.0
-
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
 [node name="JumboTron" parent="UI" instance=ExtResource( 4 )]
@@ -234,7 +240,7 @@ margin_left = 35.5835
 margin_top = 75.6318
 margin_right = 128.583
 margin_bottom = 111.632
-theme = SubResource( 1 )
+theme = SubResource( 2 )
 text = "_"
 __meta__ = {
 "_edit_use_anchors_": false
