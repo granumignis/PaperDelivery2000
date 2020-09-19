@@ -281,7 +281,7 @@ margin_right = 185.0
 margin_bottom = 100.0
 theme = SubResource( 2 )
 bbcode_text = "4"
-text = "6"
+text = "0"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
