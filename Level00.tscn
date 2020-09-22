@@ -15,7 +15,7 @@
 [ext_resource path="res://MiniMap.gd" type="Script" id=13]
 [ext_resource path="res://PhysicsPlayer.gd" type="Script" id=14]
 [ext_resource path="res://icon.png" type="Texture" id=15]
-[ext_resource path="res://Art/Game-Resolution/fontmockup-export.fnt" type="BitmapFont" id=16]
+[ext_resource path="res://Art/Game-Resolution/fontmockup-hirez-export.fnt" type="BitmapFont" id=16]
 [ext_resource path="res://fontmockup-export.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -271,25 +271,30 @@ visible = false
 position = Vector2( 32, 32 )
 texture = ExtResource( 10 )
 
-[node name="numpaperdisplay" type="RichTextLabel" parent="UI" groups=[
+[node name="UI2" parent="." instance=ExtResource( 7 )]
+scale = Vector2( 0.2, 0.2 )
+transform = Transform2D( 0.2, 0, 0, 0.2, 0, 0 )
+
+[node name="numpaperdisplay" type="RichTextLabel" parent="UI2" groups=[
 "numpaperdisplay",
 ]]
 modulate = Color( 0.729412, 0.729412, 0.729412, 1 )
-margin_left = 36.0
-margin_top = 50.0
-margin_right = 185.0
-margin_bottom = 100.0
+margin_left = 151.195
+margin_top = 361.229
+margin_right = 300.195
+margin_bottom = 402.229
+rect_clip_content = false
 theme = SubResource( 2 )
 bbcode_text = "4"
-text = "0"
+tab_size = 15
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="papercount" type="Sprite" parent="UI"]
-position = Vector2( 21.8672, 83.4387 )
-scale = Vector2( 0.118421, 0.118421 )
+[node name="papercount" type="Sprite" parent="UI2"]
+position = Vector2( 100.865, 400.212 )
+scale = Vector2( 0.598313, 0.598313 )
 texture = ExtResource( 8 )
 [connection signal="out_of_newspapers" from="PaperBoy/PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
 [connection signal="shot_newspaper" from="PaperBoy/PaperBoy" to="." method="_on_PaperBoy_shot_newspaper"]
