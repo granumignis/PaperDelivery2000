@@ -4,7 +4,7 @@ onready var main = get_tree()
 onready var Marquee = $Marquee
 onready var PaperBoy = $PaperBoy/PaperBoy
 onready var PaperBoyPhyz = $PaperBoy
-onready var JumboTron = $UI/JumboTron
+onready var JumboTron = $JumboTronCanvas/JumboTron
 onready var MailBox = $MailBox
 onready var distance
 onready var scoreMultiplier
@@ -31,16 +31,8 @@ func _proces():
 func _ready():
 	VisualServer.set_default_clear_color(Color.black)
 	display_high_score()
-	yield(get_tree().create_timer(3), "timeout")
-	JumboTron.setJumboTronMessage("Game Start: 3")
-	yield(get_tree().create_timer(1), "timeout")
-	JumboTron.setJumboTronMessage("Game Start: 2")
-	yield(get_tree().create_timer(1), "timeout")
-	JumboTron.setJumboTronMessage("Game Start: 1")
-	yield(get_tree().create_timer(1), "timeout")
-	JumboTron.setJumboTronMessage("Game Start: 0")
 	PaperBoy.set_process(true)
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(3), "timeout")
 	JumboTron.setJumboTronMessage("SCORE: " + str(score))
 	
 	
@@ -92,16 +84,6 @@ func restart_game():
 func _on_PaperBoy_shot_newspaper(papers_left):
 	var tmpDelivered =  delivered
 	print ("papers_left: " + str(papers_left) + " " + "tmpDelivered" + " " + str(tmpDelivered))
-	# yield(get_tree().create_timer(5), "timeout")
-	# if (delivered == tmpDelivered && PaperBoy.CANSHOOT == true):
-	#	PaperBoy.set_canshoot(false)
-	#	print("You did not deliver the last thrown paper within 5 seconds")
-#		update_score_data()
-	#	JumboTron.setJumboTronMessage("LAST THROW MISSED")
-	#	yield(get_tree().create_timer(3), "timeout")
-	#	JumboTron.setJumboTronMessage("GAME OVER")
-	#	yield(get_tree().create_timer(4), "timeout")
-	#	get_tree().change_scene("res://UI/MainMenu.tscn")
 	
 func addToScore(amountToAdd):
 	if (OS.get_unix_time() - time_of_last_delivery <= 1):
