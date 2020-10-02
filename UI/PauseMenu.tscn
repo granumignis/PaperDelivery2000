@@ -1,46 +1,95 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://Art/Game-Resolution/MenuSelecter_StartGame.png" type="Texture" id=2]
+[ext_resource path="res://new_styleboxflat.tres" type="StyleBox" id=3]
+[ext_resource path="res://Art/Game-Resolution/lowresfont.fnt" type="BitmapFont" id=4]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 4 )
+
+[sub_resource type="Theme" id=2]
+default_font = ExtResource( 4 )
+
+[sub_resource type="Theme" id=3]
+default_font = ExtResource( 4 )
 
 [node name="PauseMenu" type="ColorRect"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="ResumeButton" type="Button" parent="."]
-margin_left = 29.2531
-margin_top = 24.4957
-margin_right = 135.253
-margin_bottom = 44.4957
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.396078 )
+margin_right = 14.0
+margin_bottom = 90.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ResumeButton" type="Button" parent="Panel"]
+margin_left = 119.147
+margin_top = 44.4662
+margin_right = 225.147
+margin_bottom = 60.4662
+theme = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "Resume Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainMenuButton" type="Button" parent="."]
-margin_left = 29.2531
-margin_top = 49.9515
-margin_right = 135.253
-margin_bottom = 69.9515
+[node name="RetryButton" type="Button" parent="Panel"]
+margin_left = 119.147
+margin_top = 71.4662
+margin_right = 225.147
+margin_bottom = 88.4662
+theme = SubResource( 2 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+text = "Retry"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuButton" type="Button" parent="Panel"]
+margin_left = 118.754
+margin_top = 103.078
+margin_right = 224.754
+margin_bottom = 118.078
+theme = SubResource( 3 )
+custom_styles/normal = ExtResource( 3 )
 text = "Main Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuSelecter_ResumeGame" type="Sprite" parent="."]
-position = Vector2( 16.617, 33.9411 )
+[node name="MenuSelecter_ResumeGame" type="Sprite" parent="Panel"]
+position = Vector2( 106.118, 52.669 )
 scale = Vector2( 0.116117, 0.116117 )
 texture = ExtResource( 2 )
 
-[node name="MenuSelecter_MainMenu" type="Sprite" parent="."]
-position = Vector2( 16.9706, 61.1647 )
+[node name="MenuSelecter_Retry" type="Sprite" parent="Panel"]
+position = Vector2( 106.118, 79.5391 )
 scale = Vector2( 0.116117, 0.116117 )
 texture = ExtResource( 2 )
-[connection signal="pressed" from="ResumeButton" to="." method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+
+[node name="MenuSelecter_MainMenu" type="Sprite" parent="Panel"]
+position = Vector2( 106.118, 111.005 )
+scale = Vector2( 0.116117, 0.116117 )
+texture = ExtResource( 2 )
+[connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="Panel/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="Panel/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

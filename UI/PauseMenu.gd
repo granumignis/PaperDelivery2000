@@ -2,10 +2,11 @@ extends ColorRect
 
 var selectedMenuItem = 0
 var minMenuItem = 0
-var maxMenuItem = 1
+var maxMenuItem = 2
 
-onready var selecter_MainMenu = $MenuSelecter_MainMenu
-onready var selecter_ResumeGame = $MenuSelecter_ResumeGame
+onready var selecter_MainMenu = $Panel/MenuSelecter_MainMenu
+onready var selecter_Retry = $Panel/MenuSelecter_Retry
+onready var selecter_ResumeGame = $Panel/MenuSelecter_ResumeGame
 
 var paused = false setget set_paused
 
@@ -36,11 +37,18 @@ func _process(delta):
 			if selectedMenuItem == 0:
 				_on_ResumeButton_pressed()
 			if selectedMenuItem == 1:
+				_on_RetryButton_pressed()	
+			if selectedMenuItem == 2:
 				_on_MainMenuButton_pressed()	
 
 
 func _on_ResumeButton_pressed():
 	self.paused = false
+
+func _on_RetryButton_pressed():
+	print("retrybuttonpressed")
+	self.paused = false
+	get_tree().reload_current_scene()
 
 func _on_MainMenuButton_pressed():
 	self.paused = false
@@ -50,10 +58,17 @@ func _on_MainMenuButton_pressed():
 func highlightMenuItem(selectedMenuItem):
 	match selectedMenuItem:
 		0:
-			selecter_MainMenu.visible = false
 			selecter_ResumeGame.visible = true
+			selecter_Retry.visible = false
+			selecter_MainMenu.visible = false
 		1:
-			selecter_MainMenu.visible = true
 			selecter_ResumeGame.visible = false
+			selecter_Retry.visible = true
+			selecter_MainMenu.visible = false
+		2:
+			selecter_ResumeGame.visible = false
+			selecter_Retry.visible = false
+			selecter_MainMenu.visible = true
+
 
 
