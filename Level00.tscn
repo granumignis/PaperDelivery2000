@@ -287,15 +287,17 @@ position = Vector2( 32, 32 )
 texture = ExtResource( 10 )
 
 [node name="UI2" type="CanvasLayer" parent="."]
+scale = Vector2( 0.25, 0.25 )
+transform = Transform2D( 0.25, 0, 0, 0.25, 0, 0 )
 
 [node name="numpaperdisplay" type="RichTextLabel" parent="UI2" groups=[
 "numpaperdisplay",
 ]]
 modulate = Color( 0.729412, 0.729412, 0.729412, 1 )
-margin_left = 151.195
-margin_top = 361.229
-margin_right = 300.195
-margin_bottom = 402.229
+margin_left = 157.028
+margin_top = 282.673
+margin_right = 306.028
+margin_bottom = 323.673
 rect_clip_content = false
 theme = SubResource( 2 )
 bbcode_text = "4"
@@ -307,7 +309,7 @@ __meta__ = {
 }
 
 [node name="papercount" type="Sprite" parent="UI2"]
-position = Vector2( 100.865, 400.212 )
+position = Vector2( 89.8262, 320.409 )
 scale = Vector2( 0.598313, 0.598313 )
 texture = ExtResource( 8 )
 [connection signal="out_of_newspapers" from="PaperBoy/PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
