@@ -9,6 +9,7 @@ onready var MailBox = $MailBox
 onready var distance
 onready var scoreMultiplier
 onready var numberOfMailBoxes = 0
+onready var numberOfExtraPaperBundles = 0
 onready var paperdisplay = get_tree().get_nodes_in_group("numpaperdisplay")
 onready var maincam = $Camera
 
@@ -32,17 +33,16 @@ func _ready():
 	VisualServer.set_default_clear_color(Color.black)
 	display_high_score()
 	PaperBoy.set_process(true)
-	yield(get_tree().create_timer(3), "timeout")
-	JumboTron.setJumboTronMessage("SCORE: " + str(score))
-	
+	updatePaperDisplay()
 	
 	for object in get_tree().get_nodes_in_group("minimap_objects"):
 		print("listing minimap_objects: " + str(object.get_name()))
 		# object.connect("removed", $UI/MiniMap, "on_object_removed") 
 		numberOfMailBoxes += 1
 		print("numberOfMailBoxes: " + str(numberOfMailBoxes))
-	PaperBoy.AMMO = numberOfMailBoxes
-	updatePaperDisplay()
+		
+	yield(get_tree().create_timer(3), "timeout")
+	JumboTron.setJumboTronMessage("SCORE: " + str(score))
 	
 	
 func set_delivered(value):
@@ -68,15 +68,23 @@ func _on_MailBox_NewsPaper_Delivered(mailboxName, mailboxPosition):
 	addToScore(int(round(distance * 100)))
 
 func _on_PaperBoy_out_of_newspapers():
-	PaperBoy.set_canshoot(false)
-	PaperBoy.set_showReticle(false)
+	notify_out_of_papers()
+	for object in get_tree().get_nodes_in_group("extrapapers"):
+		numberOfExtraPaperBundles += 1
+	print("numberofExtraPaperBundles: " + str(numberOfExtraPaperBundles))
+	if numberOfExtraPaperBundles == 0:
+		PaperBoy.set_canshoot(false)
+		JumboTron.setJumboTronMessage("OUT OF PAPERS. \n OUT OF BUNDLES. \n GAME OVER.")
+		yield(get_tree().create_timer(3), "timeout")
+		JumboTron.setJumboTronMessage("OUT OF PAPERS. \n OUT OF BUNDLES. \n GAME OVER.")
+	
+	numberOfExtraPaperBundles = 0	
+		
+func notify_out_of_papers():
 	JumboTron.setJumboTronMessage("OUT OF PAPERS")
-	yield(get_tree().create_timer(5), "timeout")
-	JumboTron.setJumboTronMessage("TRY AGAIN")
-	update_score_data()
-	check_for_new_high_score()
-	yield(get_tree().create_timer(5), "timeout")
-	get_tree().change_scene("res://UI/MainMenu.tscn")
+	yield(get_tree().create_timer(3), "timeout")
+	JumboTron.setJumboTronMessage("SCORE: " + str(score))
+	
 
 func restart_game():
 	delivered = 0

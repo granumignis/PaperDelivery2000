@@ -8,7 +8,7 @@ signal shot_newspaper(papers_left)
 var moving = false
 export(int) var SPEED = 157
 export(int) var THROW_SPEED = 157
-export(int) var AMMO = 5
+export(int) var AMMO = 0
 export (bool) var CANSHOOT = true
 
 onready var sprite = $Sprite
