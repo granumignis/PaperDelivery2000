@@ -11,9 +11,11 @@ onready var scoreMultiplier
 onready var numberOfMailBoxes = 0
 onready var numberOfExtraPaperBundles = 0
 onready var paperdisplay = Utils.get_by_name("numpaperdisplay")
+onready var paperLabel = Utils.get_by_name("PaperCount")
 onready var maincam = $Camera
 onready var retryMenu = $UI/RetryMenu
-onready var scoreDisplay = Utils.get_by_name("ScoreDisplay")
+onready var scoreDisplay = Utils.get_by_name("ScoreNumber")
+onready var scoreLabel = Utils.get_by_name("ScoreLabel_HandDrawn")
 
 var time_of_last_delivery = 10000
 
@@ -63,6 +65,9 @@ func set_delivered(value):
 		update_score_data()
 		check_for_new_high_score()
 		scoreDisplay.visible = false
+		scoreLabel.visible = false
+		paperdisplay.visible = false
+		paperLabel.visible = false
 		JumboTron.setJumboTronMessage("ROUTE COMPLETE!\nFINAL SCORE:"  + str(score) + "\n" + display_high_score())
 		retryMenu.paused = true
 
@@ -122,13 +127,13 @@ func addToScore(amountToAdd):
 	#JumboTron.setJumboTronMessage("SCORE: " + str(score))
 
 func updateScoreDisplay():
-	scoreDisplay.text = ("SCORE: " + str(score))
+	scoreDisplay.text = str(score)
 
 func checkForExtraPaperBonus():
 	if PaperBoy.AMMO > 0:
 		score += 500 
 		updateScoreDisplay()
-		return ("\nEXTRA PAPER LEFT OVER: +500 BONUS!")
+		return ("\nEXTRA PAPER LEFT OVER: 500 BONUS!")
 	else:
 		return ""
 
