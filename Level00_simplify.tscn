@@ -210,7 +210,7 @@ margin_top = 110.075
 margin_right = 85.186
 margin_bottom = 200.075
 theme = ExtResource( 18 )
-text = "Papers: 0"
+text = "Papers:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -277,23 +277,22 @@ position = Vector2( 32, 32 )
 texture = ExtResource( 13 )
 
 [node name="UI2" type="CanvasLayer" parent="."]
-scale = Vector2( 0.25, 0.25 )
-transform = Transform2D( 0.25, 0, 0, 0.25, 0, 0 )
+scale = Vector2( 0.2, 0.2 )
+transform = Transform2D( 0.2, 0, 0, 0.2, 0, 0 )
 
 [node name="numpaperdisplay" type="RichTextLabel" parent="UI2" groups=[
 "numpaperdisplay",
 ]]
-visible = false
 modulate = Color( 0.729412, 0.729412, 0.729412, 1 )
-margin_left = 157.028
-margin_top = 282.673
-margin_right = 306.028
-margin_bottom = 323.673
+margin_left = 171.145
+margin_top = 365.477
+margin_right = 320.145
+margin_bottom = 406.477
 rect_clip_content = false
 theme = SubResource( 2 )
 bbcode_text = "4"
 tab_size = 15
-text = "4"
+text = "0"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

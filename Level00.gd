@@ -10,7 +10,7 @@ onready var distance
 onready var scoreMultiplier
 onready var numberOfMailBoxes = 0
 onready var numberOfExtraPaperBundles = 0
-onready var paperdisplay = get_tree().get_nodes_in_group("numpaperdisplay")
+onready var paperdisplay = Utils.get_by_name("numpaperdisplay")
 onready var maincam = $Camera
 onready var retryMenu = $UI/RetryMenu
 onready var scoreDisplay = Utils.get_by_name("ScoreDisplay")
@@ -165,7 +165,6 @@ func _on_MiniMap_gui_input(event):
 			self.zoom -= 0.1
 
 func updatePaperDisplay():
-	for item in paperdisplay:
-		item.text = str(PaperBoy.AMMO)
+	paperdisplay.text = str(PaperBoy.AMMO)
 
 

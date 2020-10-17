@@ -17,7 +17,7 @@ onready var sprite = $Sprite
 onready var aim_visual = $"Sprite/aim-visual"
 onready var throwpoint = $"Sprite/throwpoint"
 onready var extrapapersobjects
-onready var paperdisplay = Utils.get_by_name("PaperCount")
+onready var paperdisplay = Utils.get_by_name("numpaperdisplay")
 
 
 func _ready():
@@ -85,4 +85,4 @@ func _on_PaperBoy_area_entered(area):
 			print("You contacted a collisionobject!")
 			
 func updatePaperDisplay():
-	paperdisplay.text = "PAPERS: " + str(AMMO)
+	paperdisplay.text = str(AMMO)
