@@ -40,7 +40,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("Menu_ChooseOption"):
 		if selectedMenuItem == 0:
 			yield(get_tree().create_timer(.1), "timeout")
-			get_tree().change_scene("res://Level00.tscn")
+			get_tree().change_scene("res://Level00_simplify.tscn")
 		if selectedMenuItem == 1:
 			pass
 		if selectedMenuItem == 2:

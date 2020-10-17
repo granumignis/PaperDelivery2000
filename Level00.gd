@@ -2,8 +2,8 @@ extends Node
 
 onready var main = get_tree()
 onready var Marquee = $Marquee
-onready var PaperBoy = $PaperBoy/PaperBoy
-onready var PaperBoyPhyz = $PaperBoy
+export onready var PaperBoy = $PaperBoyPhyz/PaperBoy
+onready var PaperBoyPhyz = $PaperBoyPhyz
 onready var JumboTron = $JumboTronCanvas/JumboTron
 onready var MailBox = $MailBox
 onready var distance
@@ -12,6 +12,7 @@ onready var numberOfMailBoxes = 0
 onready var numberOfExtraPaperBundles = 0
 onready var paperdisplay = get_tree().get_nodes_in_group("numpaperdisplay")
 onready var maincam = $Camera
+onready var retryMenu = $UI/RetryMenu
 
 var time_of_last_delivery = 10000
 
@@ -51,13 +52,16 @@ func set_delivered(value):
 	wait(3)
 	if delivered >= numberOfMailBoxes:
 		PaperBoy.set_canshoot(false)
-		JumboTron.setJumboTronMessage("WIN")
+		JumboTron.setJumboTronMessage("ROUTE COMPLETE!\nSCORE:"  + str(score))
 		PaperBoy.set_showReticle(false)
+		checkForExtraPaperBonus()		
 		yield(get_tree().create_timer(3), "timeout")
 		update_score_data()
 		check_for_new_high_score()
 		yield(get_tree().create_timer(3), "timeout")
-		get_tree().change_scene("res://UI/MainMenu.tscn")
+		JumboTron.setJumboTronMessage("ROUTE COMPLETE!\nSCORE:"  + str(score) + "\n" + display_high_score())
+		retryMenu.paused = true
+
 
 func get_delivered():
 	return delivered
@@ -81,9 +85,16 @@ func _on_PaperBoy_out_of_newspapers():
 	numberOfExtraPaperBundles = 0	
 		
 func notify_out_of_papers():
-	JumboTron.setJumboTronMessage("OUT OF PAPERS")
-	yield(get_tree().create_timer(3), "timeout")
-	JumboTron.setJumboTronMessage("SCORE: " + str(score))
+
+	if PaperBoy.HASEVERPICKEDUPPAPERS == true:
+		JumboTron.setJumboTronMessage("OUT OF PAPERS")
+		yield(get_tree().create_timer(3), "timeout")
+		JumboTron.setJumboTronMessage("SCORE: " + str(score))
+		yield(get_tree().create_timer(3), "timeout")
+		JumboTron.setJumboTronMessage("TRY AGAIN?")
+		retryMenu.paused = true
+	else:
+		JumboTron.setJumboTronMessage("FIND BUNDLE\nOF PAPERS")
 	
 
 func restart_game():
@@ -104,10 +115,18 @@ func addToScore(amountToAdd):
 		
 	print("New Score: " + str(score) + " (X" + str(scoreMultiplier) + " BONUS!)")
 	JumboTron.setJumboTronMessage("SCORE: " + str(score))
+
+func checkForExtraPaperBonus():
+	if PaperBoy.AMMO > 0:
+		print("Bonus! One Left Over Paper!")
+		score = score * 1.5
+
 		
 func display_high_score():
 	var score_data = SaveAndLoad.load_score_from_file()
-	JumboTron.setJumboTronMessage("HIGH SCORE: " + str(score_data.highscore))
+	var theMessage = "HIGH SCORE: " + str(score_data.highscore)
+	JumboTron.setJumboTronMessage(theMessage)
+	return theMessage
 
 func update_score_data():
 	var score_data = SaveAndLoad.load_score_from_file()
@@ -136,3 +155,5 @@ func _on_MiniMap_gui_input(event):
 func updatePaperDisplay():
 	for item in paperdisplay:
 		item.text = str(PaperBoy.AMMO)
+
+

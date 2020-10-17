@@ -6,16 +6,19 @@ signal shot_newspaper(papers_left)
 
 
 var moving = false
+
 export(int) var SPEED = 157
 export(int) var THROW_SPEED = 157
 export(int) var AMMO = 0
 export (bool) var CANSHOOT = true
+export (bool) var HASEVERPICKEDUPPAPERS = false
 
 onready var sprite = $Sprite
 onready var aim_visual = $"Sprite/aim-visual"
 onready var throwpoint = $"Sprite/throwpoint"
 onready var extrapapersobjects
 onready var paperdisplay = get_tree().get_nodes_in_group("numpaperdisplay")
+
 
 func _ready():
 	sprite.set_self_modulate(Color( 1, 1, 1, 0 ))
@@ -71,13 +74,13 @@ func _on_PaperBoy_area_entered(area):
 	var extrapapersobjects = get_tree().get_nodes_in_group("extrapapers")
 	for item in extrapapersobjects:
 		if str(area) == str(item):
-			AMMO += 5
+			AMMO += 6
 			updatePaperDisplay()
-			print("You picked up 5 extra papers!")
+			print("You picked up 6 extra papers!")
 	var collisionobjects = get_tree().get_nodes_in_group("collision")
 	for item in collisionobjects:
 		if str(area) == str(item):
-			AMMO += 5
+			AMMO += 0
 			updatePaperDisplay()
 			print("You contacted a collisionobject!")
 			
