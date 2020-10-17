@@ -15,3 +15,7 @@ func setJumboTronMessage(messageToDisplay):
 	print("Attempting to set JumboTron Message To: " + messageToDisplay + "--Jumbotron is " + str(JumboTron))
 	JumboTron.text = messageToDisplay
 	print("JumboTron Label Text is now: " + JumboTron.text)
+
+func addLineToJumboTronMessage(linetoAdd):
+	JumboTron.text += "\n" + str(linetoAdd)
+	print("JumboTron Label Text is now: " + JumboTron.text)

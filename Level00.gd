@@ -13,6 +13,7 @@ onready var numberOfExtraPaperBundles = 0
 onready var paperdisplay = get_tree().get_nodes_in_group("numpaperdisplay")
 onready var maincam = $Camera
 onready var retryMenu = $UI/RetryMenu
+onready var scoreDisplay = Utils.get_by_name("ScoreDisplay")
 
 var time_of_last_delivery = 10000
 
@@ -32,7 +33,7 @@ func _proces():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	VisualServer.set_default_clear_color(Color.black)
-	display_high_score()
+	#display_high_score()
 	PaperBoy.set_process(true)
 	updatePaperDisplay()
 	
@@ -42,8 +43,8 @@ func _ready():
 		numberOfMailBoxes += 1
 		print("numberOfMailBoxes: " + str(numberOfMailBoxes))
 		
-	yield(get_tree().create_timer(3), "timeout")
-	JumboTron.setJumboTronMessage("SCORE: " + str(score))
+	#yield(get_tree().create_timer(3), "timeout")
+	#JumboTron.setJumboTronMessage("SCORE: " + str(score))
 	
 	
 func set_delivered(value):
@@ -52,14 +53,17 @@ func set_delivered(value):
 	wait(3)
 	if delivered >= numberOfMailBoxes:
 		PaperBoy.set_canshoot(false)
-		JumboTron.setJumboTronMessage("ROUTE COMPLETE!\nSCORE:"  + str(score))
 		PaperBoy.set_showReticle(false)
-		checkForExtraPaperBonus()		
+		JumboTron.setJumboTronMessage("ROUTE COMPLETE!")
+	
 		yield(get_tree().create_timer(3), "timeout")
+			
+		JumboTron.setJumboTronMessage("ROUTE COMPLETE!" + str(checkForExtraPaperBonus()))
+		yield(get_tree().create_timer(5), "timeout")
 		update_score_data()
 		check_for_new_high_score()
-		yield(get_tree().create_timer(3), "timeout")
-		JumboTron.setJumboTronMessage("ROUTE COMPLETE!\nSCORE:"  + str(score) + "\n" + display_high_score())
+		scoreDisplay.visible = false
+		JumboTron.setJumboTronMessage("ROUTE COMPLETE!\nFINAL SCORE:"  + str(score) + "\n" + display_high_score())
 		retryMenu.paused = true
 
 
@@ -81,15 +85,14 @@ func _on_PaperBoy_out_of_newspapers():
 		JumboTron.setJumboTronMessage("OUT OF PAPERS. \n OUT OF BUNDLES. \n GAME OVER.")
 		yield(get_tree().create_timer(3), "timeout")
 		JumboTron.setJumboTronMessage("OUT OF PAPERS. \n OUT OF BUNDLES. \n GAME OVER.")
-	
 	numberOfExtraPaperBundles = 0	
 		
 func notify_out_of_papers():
 
 	if PaperBoy.HASEVERPICKEDUPPAPERS == true:
 		JumboTron.setJumboTronMessage("OUT OF PAPERS")
-		yield(get_tree().create_timer(3), "timeout")
-		JumboTron.setJumboTronMessage("SCORE: " + str(score))
+		#yield(get_tree().create_timer(3), "timeout")
+		#JumboTron.setJumboTronMessage("SCORE: " + str(score))
 		yield(get_tree().create_timer(3), "timeout")
 		JumboTron.setJumboTronMessage("TRY AGAIN?")
 		retryMenu.paused = true
@@ -108,18 +111,26 @@ func addToScore(amountToAdd):
 	if (OS.get_unix_time() - time_of_last_delivery <= 1):
 		scoreMultiplier = 2
 		score = score + (amountToAdd * scoreMultiplier)
+		updateScoreDisplay()		
 	else:
 		scoreMultiplier = 1
 		score = score + (amountToAdd)
+		updateScoreDisplay()
 		
 		
 	print("New Score: " + str(score) + " (X" + str(scoreMultiplier) + " BONUS!)")
-	JumboTron.setJumboTronMessage("SCORE: " + str(score))
+	#JumboTron.setJumboTronMessage("SCORE: " + str(score))
+
+func updateScoreDisplay():
+	scoreDisplay.text = ("SCORE: " + str(score))
 
 func checkForExtraPaperBonus():
 	if PaperBoy.AMMO > 0:
-		print("Bonus! One Left Over Paper!")
-		score = score * 1.5
+		score += 500 
+		updateScoreDisplay()
+		return ("\nEXTRA PAPER LEFT OVER: +500 BONUS!")
+	else:
+		return ""
 
 		
 func display_high_score():
@@ -137,9 +148,10 @@ func update_score_data():
 func check_for_new_high_score():
 	var score_data = SaveAndLoad.load_score_from_file()
 	if score > score_data.highscore:
-		JumboTron.setJumboTronMessage("New High Score!" + str(score))
+		JumboTron.addLineToJumboTronMessage("New High Score!" + str(score))
 	else:
-		JumboTron.setJumboTronMessage("Score: " + str(score))
+		pass
+		# JumboTron.setJumboTronMessage("Score: " + str(score))
 
 func wait(delaySeconds):
 	yield(get_tree().create_timer(delaySeconds), "timeout")
