@@ -1,19 +1,19 @@
 extends Node
 
 onready var main = get_tree()
-onready var Marquee = $Marquee
-export onready var PaperBoy = $PaperBoyPhyz/PaperBoy
-onready var PaperBoyPhyz = $PaperBoyPhyz
-onready var JumboTron = $JumboTronCanvas/JumboTron
-onready var MailBox = $MailBox
+onready var Marquee = Utils.get_by_name("Marquee")
+export onready var PaperBoy = Utils.get_by_name("PaperBoy")
+onready var PaperBoyPhyz = Utils.get_by_name("PaperBoyPhyz")
+onready var JumboTron = Utils.get_by_name("JumboTron")
+onready var MailBox = Utils.get_by_name("MailBox")
 onready var distance
 onready var scoreMultiplier
 onready var numberOfMailBoxes = 0
 onready var numberOfExtraPaperBundles = 0
 onready var paperdisplay = Utils.get_by_name("numpaperdisplay")
 onready var paperLabel = Utils.get_by_name("PaperCount")
-onready var maincam = $Camera
-onready var retryMenu = $UI/RetryMenu
+onready var maincam = Utils.get_by_name("Camera")
+onready var retryMenu = Utils.get_by_name("RetryMenu")
 onready var scoreDisplay = Utils.get_by_name("ScoreNumber")
 onready var scoreLabel = Utils.get_by_name("ScoreLabel_HandDrawn")
 

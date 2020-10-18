@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PaperDelivery2000"
-run/main_scene="res://Level00_simplify.tscn"
+run/main_scene="res://Level01_Jesse.tscn"
 config/icon="res://icon.png"
 
 [autoload]

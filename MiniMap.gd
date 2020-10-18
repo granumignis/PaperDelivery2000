@@ -1,11 +1,11 @@
 extends MarginContainer
 
-export (NodePath) var player
+onready var player = Utils.get_by_name("PaperBoyPhyz")
 export var zoom = 1.5 setget set_zoom
 
-onready var grid = $MarginContainer/Grid
-onready var player_marker = $MarginContainer/Grid/playermarker
-onready var box_marker = $MarginContainer/Grid/boxmarker
+onready var grid = Utils.get_by_name("Grid")
+onready var player_marker = Utils.get_by_name("playermarker")
+onready var box_marker = Utils.get_by_name("boxmarker")
 
 onready var icons = { "box" : box_marker }
 
@@ -27,10 +27,10 @@ func _process(delta):
 	if !player:
 		return
 	
-	player_marker.rotation = get_node(player).rotation + PI/2
+	player_marker.rotation = player.rotation + PI/2
 	
 	for item in markers:
-		var obj_pos = (item.position - get_node(player).position) * grid_scale + grid.rect_size / 2
+		var obj_pos = (item.position - player.position) * grid_scale + grid.rect_size / 2
 		
 		if grid.get_rect().has_point(obj_pos + grid.rect_position):
 			markers[item].scale = Vector2(1, 1)
