@@ -153,6 +153,7 @@ __meta__ = {
 
 [node name="House3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 487.196, -10.7233 )
+z_index = 2
 script = ExtResource( 21 )
 
 [node name="Sprite" parent="House3" index="0"]
@@ -332,6 +333,7 @@ __meta__ = {
 [connection signal="out_of_newspapers" from="PaperBoyPhyz/PaperBoy" to="." method="_on_PaperBoy_out_of_newspapers"]
 [connection signal="shot_newspaper" from="PaperBoyPhyz/PaperBoy" to="." method="_on_PaperBoy_shot_newspaper"]
 [connection signal="area_entered" from="House3" to="House3" method="_on_House3_area_entered"]
+[connection signal="area_exited" from="House3" to="House3" method="_on_House3_area_exited"]
 [connection signal="gui_input" from="UI_Stuff/UI/MiniMap" to="." method="_on_MiniMap_gui_input"]
 
 [editable path="House4"]

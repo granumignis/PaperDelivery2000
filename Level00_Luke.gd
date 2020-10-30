@@ -172,10 +172,3 @@ func _on_MiniMap_gui_input(event):
 
 func updatePaperDisplay():
 	paperdisplay.text = str(PaperBoy.AMMO)
-
-
-
-
-func _on_House3_area_entered(area):
-	House3.Sprite
-	pass # Replace with function body.
