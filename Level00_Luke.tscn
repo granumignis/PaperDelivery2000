@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://MiniMap.gd" type="Script" id=1]
 [ext_resource path="res://Objects/JumboTron.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Art/Game-Resolution/ScoreLabel-HandDrawn.png" type="Texture" id=19]
 [ext_resource path="res://Art/Game-Resolution/house-back-chartruse.png" type="Texture" id=20]
 [ext_resource path="res://Objects/House3.gd" type="Script" id=21]
+[ext_resource path="res://Art/Game-Resolution/house-back-turqoise.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.24721, 2.3 )
@@ -162,6 +163,20 @@ texture = ExtResource( 20 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House3"]
 visible = false
+polygon = PoolVector2Array( -449.267, 73.0811, -388.378, -6.65727, -369.924, 10.1528, -357.445, 30.2072, -344.298, 48.2562, -328.255, 75.4411, -330.038, 75.4411, -348.755, 44.691, -347.35, 48.5805, -343.72, 131.877, -344.102, 143.339, -351.171, 145.25, -364.735, 146.014, -377.726, 148.116, -388.807, 148.307, -405.428, 148.498, -412.306, 148.116, -422.622, 148.689, -431.983, 149.644, -436.951, 147.351, -438.67, 120.605, -439.816, 98.2525, -440.389, 76.0911, -441.345, 66.1568, -448.031, 73.9896 )
+
+[node name="House5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 487.196, -10.7233 )
+z_index = 2
+script = ExtResource( 21 )
+
+[node name="Sprite" parent="House5" index="0"]
+position = Vector2( 257.945, 94.2533 )
+texture = ExtResource( 22 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House5"]
+visible = false
+position = Vector2( 645.583, 22.4234 )
 polygon = PoolVector2Array( -449.267, 73.0811, -388.378, -6.65727, -369.924, 10.1528, -357.445, 30.2072, -344.298, 48.2562, -328.255, 75.4411, -330.038, 75.4411, -348.755, 44.691, -347.35, 48.5805, -343.72, 131.877, -344.102, 143.339, -351.171, 145.25, -364.735, 146.014, -377.726, 148.116, -388.807, 148.307, -405.428, 148.498, -412.306, 148.116, -422.622, 148.689, -431.983, 149.644, -436.951, 147.351, -438.67, 120.605, -439.816, 98.2525, -440.389, 76.0911, -441.345, 66.1568, -448.031, 73.9896 )
 
 [node name="UI_Stuff" type="Node" parent="."]
@@ -334,6 +349,8 @@ __meta__ = {
 [connection signal="shot_newspaper" from="PaperBoyPhyz/PaperBoy" to="." method="_on_PaperBoy_shot_newspaper"]
 [connection signal="area_entered" from="House3" to="House3" method="_on_House3_area_entered"]
 [connection signal="area_exited" from="House3" to="House3" method="_on_House3_area_exited"]
+[connection signal="area_entered" from="House5" to="House5" method="_on_House3_area_entered"]
+[connection signal="area_exited" from="House5" to="House5" method="_on_House3_area_exited"]
 [connection signal="gui_input" from="UI_Stuff/UI/MiniMap" to="." method="_on_MiniMap_gui_input"]
 
 [editable path="House4"]
@@ -341,3 +358,5 @@ __meta__ = {
 [editable path="House2"]
 
 [editable path="House3"]
+
+[editable path="House5"]
