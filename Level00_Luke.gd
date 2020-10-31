@@ -11,12 +11,13 @@ onready var scoreMultiplier
 onready var numberOfMailBoxes = 0
 onready var numberOfExtraPaperBundles = 0
 onready var paperdisplay = Utils.get_by_name("numpaperdisplay")
-onready var paperLabel = Utils.get_by_name("PaperCount")
+onready var paperLabel = Utils.get_by_name("PaperCountLabel_HandDrawn")
 onready var maincam = Utils.get_by_name("Camera")
 onready var retryMenu = Utils.get_by_name("RetryMenu")
 onready var scoreDisplay = Utils.get_by_name("ScoreNumber")
 onready var scoreLabel = Utils.get_by_name("ScoreLabel_HandDrawn")
 onready var House3 = Utils.get_by_name("House3")
+onready var routecompletegraphic = Utils.get_by_name("RouteComplete-HandDrawn")
 
 var time_of_last_delivery = 10000
 
@@ -57,19 +58,19 @@ func set_delivered(value):
 	if delivered >= numberOfMailBoxes:
 		PaperBoy.set_canshoot(false)
 		PaperBoy.set_showReticle(false)
-		JumboTron.setJumboTronMessage("ROUTE COMPLETE!")
-	
+		# JumboTron.setJumboTronMessage("ROUTE COMPLETE!")
+		routecompletegraphic.visible = true
 		yield(get_tree().create_timer(3), "timeout")
-			
-		JumboTron.setJumboTronMessage("ROUTE COMPLETE!" + str(checkForExtraPaperBonus()))
-		yield(get_tree().create_timer(5), "timeout")
-		update_score_data()
-		check_for_new_high_score()
+		JumboTron.setJumboTronMessage(str(checkForExtraPaperBonus()))
 		scoreDisplay.visible = false
 		scoreLabel.visible = false
 		paperdisplay.visible = false
 		paperLabel.visible = false
-		JumboTron.setJumboTronMessage("ROUTE COMPLETE!\nFINAL SCORE:"  + str(score) + "\n" + display_high_score())
+		yield(get_tree().create_timer(5), "timeout")
+		update_score_data()
+		check_for_new_high_score()
+		routecompletegraphic.visible = false
+		JumboTron.setJumboTronMessage("FINAL SCORE:"  + str(score) + "\n" + display_high_score())
 		retryMenu.paused = true
 
 

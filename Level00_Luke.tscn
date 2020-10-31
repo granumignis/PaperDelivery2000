@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://MiniMap.gd" type="Script" id=1]
 [ext_resource path="res://Objects/JumboTron.tscn" type="PackedScene" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://Art/Game-Resolution/house-back-chartruse.png" type="Texture" id=20]
 [ext_resource path="res://Objects/House3.gd" type="Script" id=21]
 [ext_resource path="res://Art/Game-Resolution/house-back-turqoise.png" type="Texture" id=22]
+[ext_resource path="res://Art/Game-Resolution/papers-label-handdrawn.png" type="Texture" id=23]
+[ext_resource path="res://Art/Game-Resolution/routecomplete.png" type="Texture" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.24721, 2.3 )
@@ -192,7 +194,14 @@ follow_viewport_scale = 0.0
 scale = Vector2( 0.5, 0.5 )
 transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
 
+[node name="PaperCountLabel_HandDrawn" type="Sprite" parent="UI_Stuff/PaperDisplayCanvasLayer"]
+self_modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
+position = Vector2( 38.1798, 16.9792 )
+scale = Vector2( 0.156605, 0.156605 )
+texture = ExtResource( 23 )
+
 [node name="PaperCount" type="Label" parent="UI_Stuff/PaperDisplayCanvasLayer"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -275,10 +284,10 @@ transform = Transform2D( 0.2, 0, 0, 0.2, 0, 0 )
 "numpaperdisplay",
 ]]
 modulate = Color( 0.729412, 0.729412, 0.729412, 1 )
-margin_left = 171.145
-margin_top = 365.477
-margin_right = 320.145
-margin_bottom = 406.477
+margin_left = 194.165
+margin_top = -3.89743
+margin_right = 343.165
+margin_bottom = 37.1026
 rect_clip_content = false
 theme = SubResource( 2 )
 bbcode_text = "4"
@@ -315,7 +324,7 @@ __meta__ = {
 
 [node name="ScoreLabel_HandDrawn" type="Sprite" parent="UI_Stuff/ScoreLabelCanvas_HandDrawn"]
 self_modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
-position = Vector2( 64.701, 79.0585 )
+position = Vector2( 20.8782, 82.8854 )
 scale = Vector2( 0.088, 0.088 )
 texture = ExtResource( 19 )
 
@@ -327,10 +336,10 @@ transform = Transform2D( 0.2, 0, 0, 0.2, 0, 0 )
 "numpaperdisplay",
 ]]
 modulate = Color( 0.729412, 0.729412, 0.729412, 1 )
-margin_left = 426.0
-margin_top = 356.0
-margin_right = 1149.0
-margin_bottom = 397.0
+margin_left = 206.886
+margin_top = 375.134
+margin_right = 929.886
+margin_bottom = 416.134
 rect_clip_content = false
 theme = SubResource( 2 )
 bbcode_text = "4"
@@ -340,6 +349,15 @@ scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RouteCompleteCanvas" type="CanvasLayer" parent="UI_Stuff"]
+
+[node name="RouteComplete-HandDrawn" type="Sprite" parent="UI_Stuff/RouteCompleteCanvas"]
+visible = false
+self_modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
+position = Vector2( 81.8271, 48.1213 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 24 )
 [connection signal="removed" from="MailBoxContainer/MailBox" to="UI_Stuff/UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBoxContainer/MailBox2" to="UI_Stuff/UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBoxContainer/MailBox3" to="UI_Stuff/UI/MiniMap" method="_on_MailBox_removed"]
