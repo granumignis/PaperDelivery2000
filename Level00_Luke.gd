@@ -61,7 +61,7 @@ func set_delivered(value):
 		# JumboTron.setJumboTronMessage("ROUTE COMPLETE!")
 		routecompletegraphic.visible = true
 		yield(get_tree().create_timer(3), "timeout")
-		JumboTron.setJumboTronMessage(str(checkForExtraPaperBonus()))
+		#JumboTron.setJumboTronMessage(str(checkForExtraPaperBonus()))
 		scoreDisplay.visible = false
 		scoreLabel.visible = false
 		paperdisplay.visible = false
@@ -70,7 +70,8 @@ func set_delivered(value):
 		update_score_data()
 		check_for_new_high_score()
 		routecompletegraphic.visible = false
-		JumboTron.setJumboTronMessage("FINAL SCORE:"  + str(score) + "\n" + display_high_score())
+		
+		JumboTron.setJumboTronMessage(str(checkForExtraPaperBonus()) + "\n" + "FINAL SCORE:"  + str(score) + "\n" + display_high_score())
 		retryMenu.paused = true
 
 
@@ -135,7 +136,8 @@ func checkForExtraPaperBonus():
 	if PaperBoy.AMMO > 0:
 		score += 500 
 		updateScoreDisplay()
-		return ("\nEXTRA PAPER LEFT OVER: 500 BONUS!")
+		#return ("\nEXTRA PAPER LEFT OVER: 500 BONUS!")
+		return ""
 	else:
 		return ""
 
