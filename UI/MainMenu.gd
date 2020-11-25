@@ -15,15 +15,26 @@ func _input(event):
 func _ready():
 	VisualServer.set_default_clear_color(Color.black);
 	highlightMenuItem(selectedMenuItem)
+	yield(get_tree().create_timer(2.8), "timeout")
+	
+	match int(rand_range(1,3)):
+		1:
+			SoundFX.play("announcer-paperdelivery2000_version1", 1)
+		2:
+			SoundFX.play("announcer-paperdelivery2000_version2", 1)
+		3:
+			SoundFX.play("announcer-paperdelivery2000_version3", 1)
 
 
 func _on_StartGameButton_pressed():
+	#get_tree().change_scene("res://Level00.tscn")
 	pass
-	# get_tree().change_scene("res://Level00.tscn")
+
 
 func _on_ExitButton_pressed():
+	#get_tree().quit()
 	pass
-	# get_tree().quit()
+
 
 
 func _process(delta):
@@ -38,9 +49,10 @@ func _process(delta):
 			print(str(selectedMenuItem))
 			highlightMenuItem(selectedMenuItem)
 	if Input.is_action_just_pressed("Menu_ChooseOption"):
+		print("Menu_ChooseOption button was just pressed!")
 		if selectedMenuItem == 0:
 			yield(get_tree().create_timer(.1), "timeout")
-			get_tree().change_scene("res://Level00_simplify.tscn")
+			get_tree().change_scene("res://Level00_Luke.tscn")
 		if selectedMenuItem == 1:
 			pass
 		if selectedMenuItem == 2:

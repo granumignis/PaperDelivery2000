@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/menublip_version.wav-f4e69b6ca301c4ec689a8dd6d533db49.sample"
+
+[deps]
+
+source_file="res://Audio/menublip_version.wav"
+dest_files=[ "res://.import/menublip_version.wav-f4e69b6ca301c4ec689a8dd6d533db49.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

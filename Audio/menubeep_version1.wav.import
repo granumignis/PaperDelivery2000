@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/menubeep_version1.wav-80cc72608d281651e8e24bc6d28e6666.sample"
+
+[deps]
+
+source_file="res://Audio/menubeep_version1.wav"
+dest_files=[ "res://.import/menubeep_version1.wav-80cc72608d281651e8e24bc6d28e6666.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
