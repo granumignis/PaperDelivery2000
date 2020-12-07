@@ -2,7 +2,7 @@ extends Control
 
 var selectedMenuItem = 0
 var minMenuItem = 0
-var maxMenuItem = 2
+var maxMenuItem = 1
 onready var selecter_StartGame = $MenuSelecter_StartGame
 onready var selecter_HowToPlay = $MenuSelecter_HowToPlay
 onready var selecter_Exit = $MenuSelecter_Exit
@@ -54,8 +54,6 @@ func _process(delta):
 			yield(get_tree().create_timer(.1), "timeout")
 			get_tree().change_scene("res://Level00_Luke.tscn")
 		if selectedMenuItem == 1:
-			pass
-		if selectedMenuItem == 2:
 			yield(get_tree().create_timer(1), "timeout")
 			get_tree().quit()
 
@@ -65,11 +63,7 @@ func highlightMenuItem(selectedMenuItem):
 			selecter_StartGame.visible = true
 			selecter_HowToPlay.visible = false
 			selecter_Exit.visible = false
-		1:
-			selecter_StartGame.visible = false
-			selecter_HowToPlay.visible = true
-			selecter_Exit.visible = false
-		2: 
+		1: 
 			selecter_StartGame.visible = false
 			selecter_HowToPlay.visible = false
 			selecter_Exit.visible = true
