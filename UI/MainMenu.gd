@@ -36,6 +36,21 @@ func _on_ExitButton_pressed():
 	pass
 
 
+func PlayMenuItemChangeSound():
+	match int(rand_range(1,4)):
+		1:
+			SoundFX.play("menubeep_version1", 1)
+			print("random 1")
+		2:
+			SoundFX.play("menublip_version2", 1)
+			print("random 2")
+		3:
+			SoundFX.play("menublip_version", 1)
+			print("random 3")
+		4:
+			SoundFX.play("menubloop_bersion1", 1)
+			print("random 4")
+
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_up"):
@@ -43,13 +58,18 @@ func _process(delta):
 			selectedMenuItem -= 1 
 			print(str(selectedMenuItem))
 			highlightMenuItem(selectedMenuItem)
+			PlayMenuItemChangeSound()
+					
 	if Input.is_action_just_pressed("ui_down"):
 		if selectedMenuItem != maxMenuItem:
 			selectedMenuItem += 1 
 			print(str(selectedMenuItem))
 			highlightMenuItem(selectedMenuItem)
+			PlayMenuItemChangeSound()
+			
 	if Input.is_action_just_pressed("Menu_ChooseOption"):
 		print("Menu_ChooseOption button was just pressed!")
+		SoundFX.play("buleep_version1", 1);
 		if selectedMenuItem == 0:
 			yield(get_tree().create_timer(.1), "timeout")
 			get_tree().change_scene("res://Level00_Luke.tscn")

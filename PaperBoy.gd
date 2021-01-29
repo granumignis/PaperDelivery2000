@@ -51,6 +51,7 @@ func throw_newspaper():
 			newspaper.velocity.x *= sprite.scale.x
 			newspaper.rotation = newspaper.velocity.angle()
 			AMMO = AMMO - 1
+			SoundFX.play("paperthrow");
 			updatePaperDisplay()
 			print("CURRENT AMMO: "+ str(AMMO))
 			emit_signal("shot_newspaper", AMMO)

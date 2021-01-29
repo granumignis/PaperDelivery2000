@@ -54,13 +54,16 @@ func _ready():
 func set_delivered(value):
 	delivered = value
 	time_of_last_delivery = OS.get_unix_time()
+	SoundFX.play("paperdeliveredsoundeffect")
 	wait(3)
 	if delivered >= numberOfMailBoxes:
 		PaperBoy.set_canshoot(false)
 		PaperBoy.set_showReticle(false)
 		# JumboTron.setJumboTronMessage("ROUTE COMPLETE!")
 		routecompletegraphic.visible = true
-		yield(get_tree().create_timer(3), "timeout")
+		yield(get_tree().create_timer(2), "timeout")
+		SoundFX.play("announcer-routecomplete")
+		yield(get_tree().create_timer(1), "timeout")
 		#JumboTron.setJumboTronMessage(str(checkForExtraPaperBonus()))
 		scoreDisplay.visible = false
 		scoreLabel.visible = false
