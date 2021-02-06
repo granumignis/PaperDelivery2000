@@ -54,7 +54,7 @@ func _ready():
 func set_delivered(value):
 	delivered = value
 	time_of_last_delivery = OS.get_unix_time()
-	SoundFX.play("paperdeliveredsoundeffect")
+	#SoundFX.play("paperdeliveredsoundeffect")
 	wait(3)
 	if delivered >= numberOfMailBoxes:
 		PaperBoy.set_canshoot(false)
