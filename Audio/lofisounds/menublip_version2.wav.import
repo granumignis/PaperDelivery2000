@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/menublip_version2.wav-aefc5804a1375504dd6e4aa9dd416ba3.sample"
+
+[deps]
+
+source_file="res://Audio/lofisounds/menublip_version2.wav"
+dest_files=[ "res://.import/menublip_version2.wav-aefc5804a1375504dd6e4aa9dd416ba3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

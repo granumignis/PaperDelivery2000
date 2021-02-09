@@ -1,22 +1,23 @@
 extends Node
 
 var sounds_path = "res://Audio/"
+var lowrez_sounds_path = "res://Audio/lofisounds/"
 var menu_visited_once = false
 
 var sounds = {	
-	"announcer-paperdelivery2000_version1" : load(sounds_path +  "announcer-paperdelivery2000_version1.wav"),
-	"announcer-paperdelivery2000_version2" : load(sounds_path +  "announcer-paperdelivery2000_version2.wav"),
-	"announcer-paperdelivery2000_version3" : load(sounds_path +  "announcer-paperdelivery2000_version3.wav"),
-	"buleep_version1" : load(sounds_path +  "buleep_version1.wav"),
-	"menubeep_version1" : load(sounds_path +  "menubeep_version1.wav"),
-	"menublip_version2" : load(sounds_path +  "menublip_version2.wav"),
-	"menublip_version" : load(sounds_path +  "menublip_version.wav"),
-	"menubloop_version1" : load(sounds_path +  "menubloop_version1.wav"),
-	"paperthrow" : load(sounds_path +  "paperthrow.wav"),
+	"announcer-paperdelivery2000_version1" : load(lowrez_sounds_path +  "announcer-paperdelivery2000_version1.wav"),
+	"announcer-paperdelivery2000_version2" : load(lowrez_sounds_path +  "announcer-paperdelivery2000_version2.wav"),
+	"announcer-paperdelivery2000_version3" : load(lowrez_sounds_path +  "announcer-paperdelivery2000_version3.wav"),
+	"buleep_version1" : load(lowrez_sounds_path +  "buleep_version1.wav"),
+	"menubeep_version1" : load(lowrez_sounds_path +  "menubeep_version1.wav"),
+	"menublip_version2" : load(lowrez_sounds_path +  "menublip_version2.wav"),
+	"menublip_version" : load(lowrez_sounds_path +  "menublip_version.wav"),
+	"menubloop_version1" : load(lowrez_sounds_path +  "menubloop_version1.wav"),
+	"paperthrow" : load(lowrez_sounds_path +  "paperthrow.wav"),
 	"paperdeliveredsoundeffect" : load(sounds_path +  "paperdeliveredsoundeffect.wav"),
 	"routecomplete" : load(sounds_path +  "routecomplete.wav"),
 	"sound_pickedupmorepapers" : load(sounds_path +  "sound_pickedupmorepapers.wav"),
-	"announcer-routecomplete" : load(sounds_path +  "announcer-routecomplete.wav")
+	"announcer-routecomplete" : load(lowrez_sounds_path +  "announcer-routecomplete.wav")
 }
 
 
