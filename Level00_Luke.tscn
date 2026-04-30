@@ -74,7 +74,6 @@ tile_data = PoolIntArray( -31, 3, 0, -30, 3, 0, -29, 3, 0, -28, 3, 0, -27, 3, 0,
 position = Vector2( -103.702, 77.5577 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
-smoothing_enabled = true
 smoothing_speed = 20.0
 __meta__ = {
 "_edit_lock_": true
@@ -82,43 +81,31 @@ __meta__ = {
 
 [node name="MailBoxContainer" type="Node" parent="."]
 
-[node name="MailBox" parent="MailBoxContainer" groups=[
-"minimap_objects",
-] instance=ExtResource( 7 )]
+[node name="MailBox" parent="MailBoxContainer" groups=["minimap_objects"] instance=ExtResource( 7 )]
 position = Vector2( 496.437, -9.79352 )
 scale = Vector2( 3, 3 )
 
-[node name="MailBox2" parent="MailBoxContainer" groups=[
-"minimap_objects",
-] instance=ExtResource( 7 )]
+[node name="MailBox2" parent="MailBoxContainer" groups=["minimap_objects"] instance=ExtResource( 7 )]
 position = Vector2( 231.828, -7.89298 )
 scale = Vector2( 3, 3 )
 
-[node name="MailBox3" parent="MailBoxContainer" groups=[
-"minimap_objects",
-] instance=ExtResource( 7 )]
+[node name="MailBox3" parent="MailBoxContainer" groups=["minimap_objects"] instance=ExtResource( 7 )]
 position = Vector2( -122.992, -4.61456 )
 scale = Vector2( 3, 3 )
 
-[node name="MailBox4" parent="MailBoxContainer" groups=[
-"minimap_objects",
-] instance=ExtResource( 7 )]
+[node name="MailBox4" parent="MailBoxContainer" groups=["minimap_objects"] instance=ExtResource( 7 )]
 position = Vector2( 87.7882, 114.891 )
 rotation = 3.14159
 scale = Vector2( 3, -3 )
 isFlipped = true
 
-[node name="MailBox5" parent="MailBoxContainer" groups=[
-"minimap_objects",
-] instance=ExtResource( 7 )]
+[node name="MailBox5" parent="MailBoxContainer" groups=["minimap_objects"] instance=ExtResource( 7 )]
 position = Vector2( 724.007, 120.95 )
 rotation = 3.14159
 scale = Vector2( 3, -3 )
 isFlipped = true
 
-[node name="ExtraPapers" parent="." groups=[
-"extrapapers",
-] instance=ExtResource( 3 )]
+[node name="ExtraPapers" parent="." groups=["extrapapers"] instance=ExtResource( 3 )]
 position = Vector2( -132.712, 85.151 )
 
 [node name="PaperBoyPhyz" type="KinematicBody2D" parent="."]
@@ -280,9 +267,7 @@ texture = ExtResource( 15 )
 scale = Vector2( 0.2, 0.2 )
 transform = Transform2D( 0.2, 0, 0, 0.2, 0, 0 )
 
-[node name="numpaperdisplay" type="RichTextLabel" parent="UI_Stuff/NumPaperDisplayCanvas" groups=[
-"numpaperdisplay",
-]]
+[node name="numpaperdisplay" type="RichTextLabel" parent="UI_Stuff/NumPaperDisplayCanvas" groups=["numpaperdisplay"]]
 modulate = Color( 0.729412, 0.729412, 0.729412, 1 )
 margin_left = 194.165
 margin_top = -3.89743
@@ -332,9 +317,7 @@ texture = ExtResource( 19 )
 scale = Vector2( 0.2, 0.2 )
 transform = Transform2D( 0.2, 0, 0, 0.2, 0, 0 )
 
-[node name="ScoreNumber" type="RichTextLabel" parent="UI_Stuff/ScoreDisplayCanvas" groups=[
-"numpaperdisplay",
-]]
+[node name="ScoreNumber" type="RichTextLabel" parent="UI_Stuff/ScoreDisplayCanvas" groups=["numpaperdisplay"]]
 modulate = Color( 0.729412, 0.729412, 0.729412, 1 )
 margin_left = 206.886
 margin_top = 375.134
@@ -358,6 +341,7 @@ self_modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
 position = Vector2( 81.8271, 48.1213 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 24 )
+
 [connection signal="removed" from="MailBoxContainer/MailBox" to="UI_Stuff/UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBoxContainer/MailBox2" to="UI_Stuff/UI/MiniMap" method="_on_MailBox_removed"]
 [connection signal="removed" from="MailBoxContainer/MailBox3" to="UI_Stuff/UI/MiniMap" method="_on_MailBox_removed"]
@@ -372,9 +356,6 @@ texture = ExtResource( 24 )
 [connection signal="gui_input" from="UI_Stuff/UI/MiniMap" to="." method="_on_MiniMap_gui_input"]
 
 [editable path="House4"]
-
 [editable path="House2"]
-
 [editable path="House3"]
-
 [editable path="House5"]
