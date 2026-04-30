@@ -46,12 +46,14 @@ __meta__ = {
 }
 
 [node name="DigitalMan" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 0, -2.28771 )
 scale = Vector2( 0.01, 0.01 )
 
 [node name="DigitalMan2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -2.28771 )
 scale = Vector2( 0.01, 0.01 )
+
 [connection signal="area_entered" from="." to="." method="_on_PaperBoy_area_entered"]
 [connection signal="area_shape_entered" from="." to="." method="_on_PaperBoy_area_shape_entered"]
 [connection signal="body_entered" from="." to="." method="_on_PaperBoy_body_entered"]

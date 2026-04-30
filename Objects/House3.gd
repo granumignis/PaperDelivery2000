@@ -1,7 +1,7 @@
 extends Area2D
 
-onready var Sprite = $Sprite
-onready var AnimationPlayer = $HouseAnimationPlayer
+onready var Sprite_ = $Sprite
+onready var AnimationPlayer_ = $HouseAnimationPlayer
 
 var fadeout = 0
 var fadein = 0
@@ -27,7 +27,7 @@ func _on_House3_area_entered(area):
 	print(str(area.z_index) + " <-- z index of thing that intersected")
 	print(str(self.z_index) + "<-- z index of house that got intersected.")
 	if area.name in ("DigitalMan"):
-		AnimationPlayer.play("FadeOut")
+		AnimationPlayer_.play("FadeOut")
 		#fadeout = 1
 		#Sprite.modulate = Color(1,1,1,.5)
 
@@ -35,5 +35,5 @@ func _on_House3_area_entered(area):
 func _on_House3_area_exited(area):
 	print(area.name + " just intersected a house sprite")
 	if area.name in ("DigitalMan"):
-		AnimationPlayer.play_backwards("FadeOut")
+		AnimationPlayer_.play_backwards("FadeOut")
 		#Sprite.modulate = Color(1,1,1,1)

@@ -618,4 +618,5 @@ shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
+
 [connection signal="area_entered" from="." to="." method="_on_DigitalMan_area_entered"]
