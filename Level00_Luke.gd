@@ -28,7 +28,8 @@ export (int) onready var delivered = 0 setget set_delivered, get_delivered
 
 
 func _input(event):
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	pass
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 
 func _proces():

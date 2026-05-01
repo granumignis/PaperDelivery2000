@@ -50,20 +50,12 @@ func _process(delta):
 			animationPlayer.current_animation = "Run"
 
 
-	if Input.is_action_just_released("ui_down"):
-		animationIndex="down"
-
-
-	if Input.is_action_just_released("ui_up"):
-		animationIndex="up"
 		
 	if Input.is_action_pressed("ui_cancel"):
 		SPEED = RUNSPEED
 	else:
 		SPEED = WALKSPEED
 		
-	if Input.is_action_pressed("ui_accept"):
-		pass
 			
 	if moving == true:
 		if hasCrouched == true:

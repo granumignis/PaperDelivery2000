@@ -8,7 +8,8 @@ onready var selecter_HowToPlay = $MenuSelecter_HowToPlay
 onready var selecter_Exit = $MenuSelecter_Exit
 
 func _input(event):
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	pass
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 
 

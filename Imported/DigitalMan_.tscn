@@ -215,7 +215,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -227,7 +227,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -556,7 +556,6 @@ WALKSPEED = 500
 RUNSPEED = 600
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( -3.85443, -240.021 )
 texture = ExtResource( 1 )
 hframes = 8
@@ -565,11 +564,12 @@ __meta__ = {
 }
 
 [node name="WalkTowardsCamera" type="Sprite" parent="."]
+visible = false
 position = Vector2( 12.0481, -265.06 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 hframes = 49
-frame = 22
+frame = 4
 __meta__ = {
 "_edit_lock_": true
 }
@@ -580,7 +580,6 @@ position = Vector2( 48.1928, -325.301 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
 hframes = 20
-frame = 14
 
 [node name="CrouchSprite" type="Sprite" parent="."]
 visible = false
@@ -604,7 +603,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 2.0
+playback_speed = 0.8
 anims/Crouch = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 anims/Run = SubResource( 3 )
